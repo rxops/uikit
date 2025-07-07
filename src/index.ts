@@ -6,7 +6,14 @@ export { Button } from "./components/button/button";
 export type { ButtonProps, ButtonIntent, ButtonSize } from "./components/button/button";
 
 // Export layout components
-export { Stack, Row, Column } from "./components/layout";
+export { 
+  Stack, 
+  Row, 
+  Column, 
+  Container, 
+  Grid, 
+  GridItem 
+} from "./components/layout";
 export type { 
   StackProps, 
   StackDirection, 
@@ -14,8 +21,34 @@ export type {
   RowProps, 
   ColumnProps, 
   ResponsiveSize,
-  BaseComponentProps 
+  ContainerProps,
+  ContainerSize,
+  GridProps,
+  GridItemProps
 } from "./components/layout";
+
+// Export typography components
+export { Text } from "./components/typography";
+export type { TextProps } from "./components/typography";
+
+// Export structure components
+export { 
+  Card, 
+  CardHeader, 
+  CardBody, 
+  CardFooter,
+  PatientCard,
+  VitalSignsCard,
+  MedicationCard,
+  EmergencyCard,
+  AppointmentCard
+} from "./components/structure";
+export type { 
+  CardProps, 
+  CardHeaderProps, 
+  CardBodyProps, 
+  CardFooterProps 
+} from "./components/structure";
 
 // Export design system
 export * from "./design-system";
