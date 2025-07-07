@@ -34,22 +34,22 @@ export const semanticColors = {
     darker: designTokens.colors.success.darker,
   },
   
-  // Warning colors
-  warning: {
-    lighter: designTokens.colors.warning.lighter,
-    light: designTokens.colors.warning.light,
-    default: designTokens.colors.warning.DEFAULT,
-    dark: designTokens.colors.warning.dark,
-    darker: designTokens.colors.warning.darker,
+  // Caution colors
+  caution: {
+    lighter: designTokens.colors.caution.lighter,
+    light: designTokens.colors.caution.light,
+    default: designTokens.colors.caution.DEFAULT,
+    dark: designTokens.colors.caution.dark,
+    darker: designTokens.colors.caution.darker,
   },
   
-  // Error colors
-  error: {
-    lighter: designTokens.colors.error.lighter,
-    light: designTokens.colors.error.light,
-    default: designTokens.colors.error.DEFAULT,
-    dark: designTokens.colors.error.dark,
-    darker: designTokens.colors.error.darker,
+  // Danger colors
+  danger: {
+    lighter: designTokens.colors.danger.lighter,
+    light: designTokens.colors.danger.light,
+    default: designTokens.colors.danger.DEFAULT,
+    dark: designTokens.colors.danger.dark,
+    darker: designTokens.colors.danger.darker,
   },
   
   // Info colors

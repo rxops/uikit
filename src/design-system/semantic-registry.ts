@@ -88,8 +88,8 @@ export function getSemanticColorClassSafe(
     primary: 'blue',
     secondary: 'neutral',
     success: 'green',
-    warning: 'amber',
-    error: 'red',
+    caution: 'amber',
+    danger: 'red',
     info: 'sky',
   };
   
@@ -133,8 +133,8 @@ export function getSemanticButtonClasses(intent: SemanticColorName | 'secondary'
     primary: 'blue',
     secondary: 'gray',
     success: 'green',
-    warning: 'amber',
-    error: 'red',
+    caution: 'amber',
+    danger: 'red',
     info: 'sky',
   };
   

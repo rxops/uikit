@@ -44,8 +44,8 @@ function getIntentClasses(intent: HealthcareIntent): string {
     primary: "btn-primary",
     secondary: "btn-secondary", 
     success: "btn-success",
-    warning: "btn-warning",
-    error: "btn-error",
+    caution: "btn-caution",
+    danger: "btn-danger",
     info: "btn-info"
   };
 
@@ -113,8 +113,8 @@ export const Button = component$<ButtonProps>((props) => {
     fullWidth && "w-full",
     emergency && "btn-emergency",
     medicalDeviceMode && "btn-medical-device",
-    // Critical action = medical device mode + emergency + warning intent
-    (medicalDeviceMode && emergency && intent === "warning") && "btn-critical-action",
+    // Critical action = medical device mode + emergency + caution intent
+    (medicalDeviceMode && emergency && intent === "caution") && "btn-critical-action",
     loading && "cursor-wait",
     customClass
   ].filter(Boolean).join(" ");

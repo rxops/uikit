@@ -28,19 +28,19 @@
     --color-success-dark: #15803d;      /* green-700 */
     --color-success-darker: #166534;    /* green-800 */
     
-    /* ==================== WARNING COLORS ==================== */
-    --color-warning-lighter: #fefce8;   /* amber-100 */
-    --color-warning-light: #fde68a;     /* amber-300 */
-    --color-warning: #d97706;           /* amber-600 */
-    --color-warning-dark: #b45309;      /* amber-700 */
-    --color-warning-darker: #92400e;    /* amber-800 */
+    /* ==================== CAUTION COLORS ==================== */
+    --color-caution-lighter: #fefce8;   /* amber-100 */
+    --color-caution-light: #fde68a;     /* amber-300 */
+    --color-caution: #d97706;           /* amber-600 */
+    --color-caution-dark: #b45309;      /* amber-700 */
+    --color-caution-darker: #92400e;    /* amber-800 */
     
-    /* ==================== ERROR COLORS ==================== */
-    --color-error-lighter: #fee2e2;     /* red-100 */
-    --color-error-light: #fca5a5;       /* red-300 */
-    --color-error: #dc2626;             /* red-600 */
-    --color-error-dark: #b91c1c;        /* red-700 */
-    --color-error-darker: #991b1b;      /* red-800 */
+    /* ==================== DANGER COLORS ==================== */
+    --color-danger-lighter: #fee2e2;     /* red-100 */
+    --color-danger-light: #fca5a5;       /* red-300 */
+    --color-danger: #dc2626;             /* red-600 */
+    --color-danger-dark: #b91c1c;        /* red-700 */
+    --color-danger-darker: #991b1b;      /* red-800 */
     
     /* ==================== INFO COLORS ==================== */
     --color-info-lighter: #e0f2fe;      /* sky-100 */
@@ -102,6 +102,13 @@
     --size-xl-text: 1.25rem;
     --size-xl-height: 3.5rem;
     
+    /* ==================== BORDER COLORS ==================== */
+    --border-subtle: #f3f4f6;        /* gray-100 - very light borders */
+    --border-light: #e5e7eb;         /* gray-200 - light borders */
+    --border-default: #d1d5db;       /* gray-300 - default borders */
+    --border-medium: #9ca3af;        /* gray-400 - medium borders */
+    --border-strong: #6b7280;        /* gray-500 - strong borders */
+    
     /* ==================== BORDER RADIUS ==================== */
     --radius-none: 0px;
     --radius-sm: 0.125rem;
@@ -127,8 +134,8 @@
     /* ==================== HEALTHCARE SPECIFIC ==================== */
     --healthcare-focus-ring-width: 2px;
     --healthcare-medical-device-focus-ring-width: 4px;
-    --healthcare-emergency-ring-color: var(--color-error);
-    --healthcare-critical-ring-color: var(--color-warning);
+    --healthcare-emergency-ring-color: var(--color-danger);
+    --healthcare-critical-ring-color: var(--color-caution);
   }
 }
 
@@ -208,35 +215,35 @@
     outline-offset: 2px;
   }
   
-  .btn-warning {
-    background-color: var(--color-warning);
-    border-color: var(--color-warning);
+  .btn-caution {
+    background-color: var(--color-caution);
+    border-color: var(--color-caution);
     color: var(--color-white);
   }
   
-  .btn-warning:hover:not(:disabled) {
-    background-color: var(--color-warning-dark);
-    border-color: var(--color-warning-dark);
+  .btn-caution:hover:not(:disabled) {
+    background-color: var(--color-caution-dark);
+    border-color: var(--color-caution-dark);
   }
   
-  .btn-warning:focus {
-    outline: 2px solid var(--color-warning);
+  .btn-caution:focus {
+    outline: 2px solid var(--color-caution);
     outline-offset: 2px;
   }
   
-  .btn-error {
-    background-color: var(--color-error);
-    border-color: var(--color-error);
+  .btn-danger {
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
     color: var(--color-white);
   }
   
-  .btn-error:hover:not(:disabled) {
-    background-color: var(--color-error-dark);
-    border-color: var(--color-error-dark);
+  .btn-danger:hover:not(:disabled) {
+    background-color: var(--color-danger-dark);
+    border-color: var(--color-danger-dark);
   }
   
-  .btn-error:focus {
-    outline: 2px solid var(--color-error);
+  .btn-danger:focus {
+    outline: 2px solid var(--color-danger);
     outline-offset: 2px;
   }
   
@@ -313,12 +320,23 @@
   
   .btn-medical-device:focus {
     outline: var(--healthcare-medical-device-focus-ring-width) solid var(--color-primary);
-    outline-offset: 2px;
+    outline-offset: 3px; /* Increased offset to prevent double border appearance */
   }
   
   .btn-critical-action {
-    outline: 2px solid var(--healthcare-critical-ring-color);
+    outline: 3px solid var(--healthcare-critical-ring-color);
     outline-offset: 2px;
+  }
+  
+  .btn-critical-action:focus {
+    outline: 3px solid var(--healthcare-critical-ring-color);
+    outline-offset: 3px;
+  }
+  
+  /* Emergency + Medical Device Mode + Critical Action combination */
+  .btn-emergency.btn-medical-device.btn-critical-action:focus {
+    outline: var(--healthcare-medical-device-focus-ring-width) solid var(--healthcare-critical-ring-color);
+    outline-offset: 3px;
   }
 }
 
@@ -328,24 +346,31 @@
   .text-primary { color: var(--color-primary); }
   .text-secondary { color: var(--color-secondary-darker); }
   .text-success { color: var(--color-success); }
-  .text-warning { color: var(--color-warning); }
-  .text-error { color: var(--color-error); }
+  .text-caution { color: var(--color-caution); }
+  .text-danger { color: var(--color-danger); }
   .text-info { color: var(--color-info); }
   .text-base { color: var(--color-base); }
   
   .bg-primary { background-color: var(--color-primary); }
   .bg-secondary { background-color: var(--color-secondary-lighter); }
   .bg-success { background-color: var(--color-success); }
-  .bg-warning { background-color: var(--color-warning); }
-  .bg-error { background-color: var(--color-error); }
+  .bg-caution { background-color: var(--color-caution); }
+  .bg-danger { background-color: var(--color-danger); }
   .bg-info { background-color: var(--color-info); }
   .bg-base { background-color: var(--color-base-lighter); }
   
   .border-primary { border-color: var(--color-primary); }
   .border-secondary { border-color: var(--color-secondary); }
   .border-success { border-color: var(--color-success); }
-  .border-warning { border-color: var(--color-warning); }
-  .border-error { border-color: var(--color-error); }
+  .border-caution { border-color: var(--color-caution); }
+  .border-danger { border-color: var(--color-danger); }
   .border-info { border-color: var(--color-info); }
   .border-base { border-color: var(--color-base); }
+  
+  /* Border Color Utilities */
+  .border-subtle { border-color: var(--border-subtle); }
+  .border-light { border-color: var(--border-light); }
+  .border-default { border-color: var(--border-default); }
+  .border-medium { border-color: var(--border-medium); }
+  .border-strong { border-color: var(--border-strong); }
 }

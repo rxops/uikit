@@ -87,7 +87,7 @@ export const designTokens = {
       darker: '#166534',   // 800 - Darker variant
     },
     
-    warning: {
+    caution: {
       50: '#fffbeb',   // amber-50
       100: '#fefce8',  // amber-100 (softer for healthcare)
       200: '#fef3c7',  // amber-200
@@ -106,7 +106,7 @@ export const designTokens = {
       darker: '#92400e',   // 800 - Darker variant
     },
     
-    error: {
+    danger: {
       50: '#fef2f2',   // red-50
       100: '#fee2e2',  // red-100
       200: '#fecaca',  // red-200
@@ -261,9 +261,9 @@ export const designTokens = {
     priorities: {
       low: { color: 'success', intensity: 600 },
       normal: { color: 'primary', intensity: 600 },
-      high: { color: 'warning', intensity: 600 },
-      urgent: { color: 'error', intensity: 600 },
-      critical: { color: 'error', intensity: 700 },
+      high: { color: 'caution', intensity: 600 },
+      urgent: { color: 'danger', intensity: 600 },
+      critical: { color: 'danger', intensity: 700 },
     },
     accessibility: {
       focusRing: {
@@ -291,7 +291,7 @@ export type FontSize = keyof typeof designTokens.typography.fontSize;
 export type FontWeight = keyof typeof designTokens.typography.fontWeight;
 export type BorderRadius = keyof typeof designTokens.borderRadius;
 export type BoxShadow = keyof typeof designTokens.boxShadow;
-export type SemanticColorName = 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info';
+export type SemanticColorName = 'primary' | 'secondary' | 'success' | 'caution' | 'danger' | 'info';
 
 // ==================== UTILITY FUNCTIONS ====================
 
@@ -319,23 +319,23 @@ export function generateSemanticColorCSS(): string {
   cssVars.push(`  --color-success-dark: ${designTokens.colors.success.dark};`);
   cssVars.push(`  --color-success-darker: ${designTokens.colors.success.darker};`);
   
-  // Warning Colors
+  // Caution Colors
   cssVars.push('  ');
-  cssVars.push('  /* Warning Colors - Softer amber palette for healthcare */');
-  cssVars.push(`  --color-warning-lighter: ${designTokens.colors.warning.lighter};`);
-  cssVars.push(`  --color-warning-light: ${designTokens.colors.warning.light};`);
-  cssVars.push(`  --color-warning: ${designTokens.colors.warning.DEFAULT};`);
-  cssVars.push(`  --color-warning-dark: ${designTokens.colors.warning.dark};`);
-  cssVars.push(`  --color-warning-darker: ${designTokens.colors.warning.darker};`);
+  cssVars.push('  /* Caution Colors - Softer amber palette for healthcare */');
+  cssVars.push(`  --color-caution-lighter: ${designTokens.colors.caution.lighter};`);
+  cssVars.push(`  --color-caution-light: ${designTokens.colors.caution.light};`);
+  cssVars.push(`  --color-caution: ${designTokens.colors.caution.DEFAULT};`);
+  cssVars.push(`  --color-caution-dark: ${designTokens.colors.caution.dark};`);
+  cssVars.push(`  --color-caution-darker: ${designTokens.colors.caution.darker};`);
   
-  // Error Colors
+  // Danger Colors
   cssVars.push('  ');
-  cssVars.push('  /* Error Colors */');
-  cssVars.push(`  --color-error-lighter: ${designTokens.colors.error.lighter};`);
-  cssVars.push(`  --color-error-light: ${designTokens.colors.error.light};`);
-  cssVars.push(`  --color-error: ${designTokens.colors.error.DEFAULT};`);
-  cssVars.push(`  --color-error-dark: ${designTokens.colors.error.dark};`);
-  cssVars.push(`  --color-error-darker: ${designTokens.colors.error.darker};`);
+  cssVars.push('  /* Danger Colors */');
+  cssVars.push(`  --color-danger-lighter: ${designTokens.colors.danger.lighter};`);
+  cssVars.push(`  --color-danger-light: ${designTokens.colors.danger.light};`);
+  cssVars.push(`  --color-danger: ${designTokens.colors.danger.DEFAULT};`);
+  cssVars.push(`  --color-danger-dark: ${designTokens.colors.danger.dark};`);
+  cssVars.push(`  --color-danger-darker: ${designTokens.colors.danger.darker};`);
   
   // Info Colors
   cssVars.push('  ');
@@ -374,8 +374,8 @@ export function getColorClass(colorName: string, shade: ColorScale, type: 'bg' |
     primary: 'blue',
     secondary: 'gray',
     success: 'green',
-    warning: 'amber',
-    error: 'red',
+    caution: 'amber',
+    danger: 'red',
     info: 'sky',
   };
   
@@ -391,8 +391,8 @@ export function getSemanticColorClass(colorName: SemanticColorName, variant: Sem
     primary: 'blue',
     secondary: 'gray',
     success: 'green',
-    warning: 'amber',
-    error: 'red',
+    caution: 'amber',
+    danger: 'red',
     info: 'sky',
   };
   

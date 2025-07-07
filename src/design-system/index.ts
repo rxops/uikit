@@ -41,6 +41,12 @@ export {
   injectSemanticColors,
 } from './css-variables';
 
+// Export utilities
+export {
+  mergeClasses,
+  type BaseComponentProps
+} from './utils';
+
 // Export type definitions
 export type {
   // Base types

@@ -20,7 +20,7 @@ export type Alignment = "start" | "center" | "end" | "stretch" | "baseline";
 export type Justify = "start" | "center" | "end" | "between" | "around" | "evenly";
 
 // State options (used for form states, component states)
-export type State = "default" | "success" | "warning" | "error";
+export type State = "default" | "success" | "caution" | "danger";
 
 // Position options (used for tooltips, dropdowns, popovers)
 export type Position = "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
@@ -31,7 +31,7 @@ export type Position = "top" | "bottom" | "left" | "right" | "top-start" | "top-
 export type Variant = "filled" | "outlined" | "ghost" | "link";
 
 // Semantic color types for meaning and context
-export type Color = "primary" | "neutral" | "success" | "warning" | "error" | "info";
+export type Color = "primary" | "secondary" | "success" | "caution" | "danger" | "info";
 
 // Typography style tokens
 export type TextStyle = "display" | "headline" | "title" | "body" | "label" | "caption";
@@ -63,7 +63,7 @@ export type FormVariant = "default" | "filled" | "outlined";
 export type ValidationState = "valid" | "invalid" | "pending";
 
 // Loading states for async components
-export type LoadingState = "idle" | "loading" | "success" | "error";
+export type LoadingState = "idle" | "loading" | "success" | "danger";
 
 // Interactive states
 export type InteractiveState = State | "hover" | "focus" | "active" | "disabled";
@@ -81,8 +81,8 @@ export type HealthcareIntent =
   | "primary"      // Main call-to-action
   | "secondary"    // Secondary actions  
   | "success"      // Positive actions (save, confirm)
-  | "warning"      // Caution actions (delete, warning)
-  | "error"        // Destructive actions (delete permanently)
+  | "caution"      // Caution actions (delete, warning)
+  | "danger"       // Destructive actions (delete permanently)
   | "info";        // Informational actions
 
 // Medical device contexts

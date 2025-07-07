@@ -35,13 +35,14 @@ export const colorExamples = {
   primaryDefault: semanticColors.primary.default,    // #3b82f6
   primaryDark: semanticColors.primary.dark,          // #2563eb
   successLight: semanticColors.success.light,        // #86efac
-  warningDefault: semanticColors.warning.default,    // #f59e0b
+  cautionDefault: semanticColors.caution.default,    // #f59e0b
   
   // Generated Tailwind classes
   primaryBg: getSemanticColorClass('primary', 'DEFAULT', 'bg'),     // "bg-blue-600"
   primaryHoverBg: getSemanticColorClass('primary', 'dark', 'bg'),   // "bg-blue-700"
+  secondaryBg: getSemanticColorClass('secondary', 'DEFAULT', 'bg'), // "bg-gray-300"
   successText: getSemanticColorClass('success', 'DEFAULT', 'text'), // "text-green-600"
-  errorBorder: getSemanticColorClass('error', 'DEFAULT', 'border'), // "border-red-600"
+  errorBorder: getSemanticColorClass('danger', 'DEFAULT', 'border'), // "border-red-600"
 };
 
 /**
@@ -63,7 +64,7 @@ export const cssVariables = generateSemanticColorCSS();
  * 
  * The Button component now uses this pattern:
  */
-export function getButtonIntentExample(intent: 'primary' | 'success' | 'warning' | 'error') {
+export function getButtonIntentExample(intent: 'primary' | 'success' | 'caution' | 'danger') {
   return {
     // Instead of hardcoded "bg-blue-600", we use:
     background: getSemanticColorClass(intent, 'DEFAULT', 'bg'),
@@ -101,18 +102,18 @@ export function getButtonIntentExample(intent: 'primary' | 'success' | 'warning'
 export const healthcareColorUsage = {
   // Patient status indicators
   patientStable: getSemanticColorClass('success', 'DEFAULT', 'bg'),    // Green
-  patientCritical: getSemanticColorClass('error', 'DEFAULT', 'bg'),    // Red
-  patientMonitoring: getSemanticColorClass('warning', 'DEFAULT', 'bg'), // Amber
+  patientCritical: getSemanticColorClass('danger', 'DEFAULT', 'bg'),    // Red
+  patientMonitoring: getSemanticColorClass('caution', 'DEFAULT', 'bg'), // Amber
   
   // Medical device interface
   deviceNormal: getSemanticColorClass('primary', 'DEFAULT', 'bg'),     // Blue
-  deviceAlert: getSemanticColorClass('warning', 'dark', 'bg'),         // Darker amber
-  deviceEmergency: getSemanticColorClass('error', 'darker', 'bg'),     // Darker red
+  deviceAlert: getSemanticColorClass('caution', 'dark', 'bg'),         // Darker amber
+  deviceEmergency: getSemanticColorClass('danger', 'darker', 'bg'),     // Darker red
   
   // Information hierarchy
   primaryInfo: getSemanticColorClass('info', 'DEFAULT', 'text'),       // Sky blue text
-  secondaryInfo: 'text-gray-600',  // Gray text (using base color directly)
-  actionRequired: getSemanticColorClass('warning', 'DEFAULT', 'text'), // Amber text
+  secondaryInfo: getSemanticColorClass('secondary', 'dark', 'text'),   // Gray text for secondary info
+  actionRequired: getSemanticColorClass('caution', 'DEFAULT', 'text'), // Amber text
 };
 
 export default {
