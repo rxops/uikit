@@ -1,0 +1,351 @@
+/**
+ * RxOps Design System - CSS Custom Properties
+ * 
+ * This file generates CSS custom properties from our design tokens.
+ * These CSS variables can be used across any CSS framework or vanilla CSS.
+ */
+
+@layer base {
+  :root {
+    /* ==================== PRIMARY COLORS ==================== */
+    --color-primary-lighter: #dbeafe;  /* blue-100 */
+    --color-primary-light: #93c5fd;    /* blue-300 */
+    --color-primary: #2563eb;          /* blue-600 */
+    --color-primary-dark: #1d4ed8;     /* blue-700 */
+    --color-primary-darker: #1e40af;   /* blue-800 */
+    
+    /* ==================== SECONDARY COLORS ==================== */
+    --color-secondary-lighter: #f3f4f6; /* gray-100 */
+    --color-secondary-light: #e5e7eb;   /* gray-200 */
+    --color-secondary: #d1d5db;         /* gray-300 */
+    --color-secondary-dark: #9ca3af;    /* gray-400 */
+    --color-secondary-darker: #6b7280;  /* gray-500 */
+    
+    /* ==================== SUCCESS COLORS ==================== */
+    --color-success-lighter: #dcfce7;   /* green-100 */
+    --color-success-light: #86efac;     /* green-300 */
+    --color-success: #16a34a;           /* green-600 */
+    --color-success-dark: #15803d;      /* green-700 */
+    --color-success-darker: #166534;    /* green-800 */
+    
+    /* ==================== WARNING COLORS ==================== */
+    --color-warning-lighter: #fefce8;   /* amber-100 */
+    --color-warning-light: #fde68a;     /* amber-300 */
+    --color-warning: #d97706;           /* amber-600 */
+    --color-warning-dark: #b45309;      /* amber-700 */
+    --color-warning-darker: #92400e;    /* amber-800 */
+    
+    /* ==================== ERROR COLORS ==================== */
+    --color-error-lighter: #fee2e2;     /* red-100 */
+    --color-error-light: #fca5a5;       /* red-300 */
+    --color-error: #dc2626;             /* red-600 */
+    --color-error-dark: #b91c1c;        /* red-700 */
+    --color-error-darker: #991b1b;      /* red-800 */
+    
+    /* ==================== INFO COLORS ==================== */
+    --color-info-lighter: #e0f2fe;      /* sky-100 */
+    --color-info-light: #7dd3fc;        /* sky-300 */
+    --color-info: #0284c7;              /* sky-600 */
+    --color-info-dark: #0369a1;         /* sky-700 */
+    --color-info-darker: #075985;       /* sky-800 */
+    
+    /* ==================== BASE COLORS ==================== */
+    --color-base-lighter: #f3f4f6;   /* gray-100 */
+    --color-base-light: #d1d5db;     /* gray-300 */
+    --color-base: #4b5563;           /* gray-600 */
+    --color-base-dark: #374151;      /* gray-700 */
+    --color-base-darker: #1f2937;    /* gray-800 */
+    
+    /* ==================== SPECIAL COLORS ==================== */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-transparent: transparent;
+    
+    /* ==================== SPACING TOKENS ==================== */
+    --space-0: 0px;
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.25rem;  /* 20px */
+    --space-6: 1.5rem;   /* 24px */
+    --space-8: 2rem;     /* 32px */
+    --space-10: 2.5rem;  /* 40px */
+    --space-12: 3rem;    /* 48px */
+    --space-16: 4rem;    /* 64px */
+    --space-20: 5rem;    /* 80px */
+    --space-24: 6rem;    /* 96px */
+    
+    /* ==================== COMPONENT SIZING ==================== */
+    --size-xs-padding-x: var(--space-2);
+    --size-xs-padding-y: var(--space-1);
+    --size-xs-text: 0.75rem;
+    --size-xs-height: 1.75rem;
+    
+    --size-sm-padding-x: var(--space-3);
+    --size-sm-padding-y: var(--space-1);
+    --size-sm-text: 0.875rem;
+    --size-sm-height: 2rem;
+    
+    --size-md-padding-x: var(--space-4);
+    --size-md-padding-y: var(--space-2);
+    --size-md-text: 1rem;
+    --size-md-height: 2.5rem;
+    
+    --size-lg-padding-x: var(--space-6);
+    --size-lg-padding-y: var(--space-3);
+    --size-lg-text: 1.125rem;
+    --size-lg-height: 3rem;
+    
+    --size-xl-padding-x: var(--space-8);
+    --size-xl-padding-y: var(--space-4);
+    --size-xl-text: 1.25rem;
+    --size-xl-height: 3.5rem;
+    
+    /* ==================== BORDER RADIUS ==================== */
+    --radius-none: 0px;
+    --radius-sm: 0.125rem;
+    --radius-default: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-full: 9999px;
+    
+    /* ==================== SHADOWS ==================== */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* ==================== TRANSITIONS ==================== */
+    --transition-fast: 150ms ease-in-out;
+    --transition-default: 200ms ease-in-out;
+    --transition-slow: 300ms ease-in-out;
+    
+    /* ==================== HEALTHCARE SPECIFIC ==================== */
+    --healthcare-focus-ring-width: 2px;
+    --healthcare-medical-device-focus-ring-width: 4px;
+    --healthcare-emergency-ring-color: var(--color-error);
+    --healthcare-critical-ring-color: var(--color-warning);
+  }
+}
+
+@layer components {
+  /* ==================== BUTTON COMPONENTS ==================== */
+  
+  /* Base button styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border-radius: var(--radius-lg);
+    border-width: 1px;
+    border-style: solid;
+    transition: all var(--transition-default);
+    cursor: pointer;
+  }
+  
+  .btn:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* Button Intent Styles */
+  .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+  }
+  
+  .btn-primary:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-secondary-lighter);
+    border-color: var(--color-secondary);
+    color: var(--color-base-darker);
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-secondary-light);
+    border-color: var(--color-secondary-dark);
+  }
+  
+  .btn-secondary:focus {
+    outline: 2px solid var(--color-secondary-dark);
+    outline-offset: 2px;
+  }
+  
+  .btn-success {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--color-white);
+  }
+  
+  .btn-success:hover:not(:disabled) {
+    background-color: var(--color-success-dark);
+    border-color: var(--color-success-dark);
+  }
+  
+  .btn-success:focus {
+    outline: 2px solid var(--color-success);
+    outline-offset: 2px;
+  }
+  
+  .btn-warning {
+    background-color: var(--color-warning);
+    border-color: var(--color-warning);
+    color: var(--color-white);
+  }
+  
+  .btn-warning:hover:not(:disabled) {
+    background-color: var(--color-warning-dark);
+    border-color: var(--color-warning-dark);
+  }
+  
+  .btn-warning:focus {
+    outline: 2px solid var(--color-warning);
+    outline-offset: 2px;
+  }
+  
+  .btn-error {
+    background-color: var(--color-error);
+    border-color: var(--color-error);
+    color: var(--color-white);
+  }
+  
+  .btn-error:hover:not(:disabled) {
+    background-color: var(--color-error-dark);
+    border-color: var(--color-error-dark);
+  }
+  
+  .btn-error:focus {
+    outline: 2px solid var(--color-error);
+    outline-offset: 2px;
+  }
+  
+  .btn-info {
+    background-color: var(--color-info);
+    border-color: var(--color-info);
+    color: var(--color-white);
+  }
+  
+  .btn-info:hover:not(:disabled) {
+    background-color: var(--color-info-dark);
+    border-color: var(--color-info-dark);
+  }
+  
+  .btn-info:focus {
+    outline: 2px solid var(--color-info);
+    outline-offset: 2px;
+  }
+  
+  /* Button Size Styles */
+  .btn-xs {
+    padding: var(--size-xs-padding-y) var(--size-xs-padding-x);
+    font-size: var(--size-xs-text);
+    min-height: var(--size-xs-height);
+  }
+  
+  .btn-sm {
+    padding: var(--size-sm-padding-y) var(--size-sm-padding-x);
+    font-size: var(--size-sm-text);
+    min-height: var(--size-sm-height);
+  }
+  
+  .btn-md {
+    padding: var(--size-md-padding-y) var(--size-md-padding-x);
+    font-size: var(--size-md-text);
+    min-height: var(--size-md-height);
+  }
+  
+  .btn-lg {
+    padding: var(--size-lg-padding-y) var(--size-lg-padding-x);
+    font-size: var(--size-lg-text);
+    min-height: var(--size-lg-height);
+  }
+  
+  .btn-xl {
+    padding: var(--size-xl-padding-y) var(--size-xl-padding-x);
+    font-size: var(--size-xl-text);
+    min-height: var(--size-xl-height);
+  }
+  
+  /* Button State Modifiers */
+  .btn-full-width {
+    width: 100%;
+  }
+  
+  .btn-loading {
+    cursor: wait;
+  }
+  
+  .btn-loading .btn-content {
+    opacity: 0.75;
+  }
+  
+  /* Healthcare-specific Modifiers */
+  .btn-emergency {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    outline: 2px solid var(--healthcare-emergency-ring-color);
+    outline-offset: 2px;
+  }
+  
+  .btn-medical-device {
+    transition: all var(--transition-slow);
+  }
+  
+  .btn-medical-device:focus {
+    outline: var(--healthcare-medical-device-focus-ring-width) solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  .btn-critical-action {
+    outline: 2px solid var(--healthcare-critical-ring-color);
+    outline-offset: 2px;
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+@layer utilities {
+  /* Semantic color utilities */
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary-darker); }
+  .text-success { color: var(--color-success); }
+  .text-warning { color: var(--color-warning); }
+  .text-error { color: var(--color-error); }
+  .text-info { color: var(--color-info); }
+  .text-base { color: var(--color-base); }
+  
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary-lighter); }
+  .bg-success { background-color: var(--color-success); }
+  .bg-warning { background-color: var(--color-warning); }
+  .bg-error { background-color: var(--color-error); }
+  .bg-info { background-color: var(--color-info); }
+  .bg-base { background-color: var(--color-base-lighter); }
+  
+  .border-primary { border-color: var(--color-primary); }
+  .border-secondary { border-color: var(--color-secondary); }
+  .border-success { border-color: var(--color-success); }
+  .border-warning { border-color: var(--color-warning); }
+  .border-error { border-color: var(--color-error); }
+  .border-info { border-color: var(--color-info); }
+  .border-base { border-color: var(--color-base); }
+}
