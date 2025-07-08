@@ -31,6 +31,14 @@ export type {
 export { Text } from "./components/typography";
 export type { TextProps } from "./components/typography";
 
+// Export feedback components
+export { Alert, Badge, Icon } from "./components/feedback";
+export type { AlertProps, BadgeProps, IconProps, IconName } from "./components/feedback";
+
+// Export form components
+export { Input } from "./components/forms";
+export type { InputProps, InputType } from "./components/forms";
+
 // Export structure components
 export { 
   Card, 

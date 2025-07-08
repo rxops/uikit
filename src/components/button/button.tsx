@@ -2,18 +2,31 @@ import { component$, Slot, useSignal, $, type QRL } from "@builder.io/qwik";
 import type { HealthcareIntent, ComponentSize } from "../../design-system";
 
 /**
+ * Button Variant Types - Inspired by Radzen Design System
+ */
+export type ButtonVariant = 
+  | "filled"    // Default solid background (Radzen: Filled Buttons)
+  | "flat"      // Subtle background, no borders (Radzen: Flat Buttons) 
+  | "outlined"  // Border only, transparent background (Radzen: Outlined Buttons)
+  | "text"      // No background, no border, text only (Radzen: Text Buttons)
+  | "fab"       // Floating Action Button with elevation (Material 3 inspired)
+  | "circular"; // Circular button without elevation
+
+/**
  * Button Props Interface
  */
 export interface ButtonProps {
   /** Semantic intent that drives styling automatically */
   intent?: HealthcareIntent;
+  /** Button variant style - inspired by Radzen */
+  variant?: ButtonVariant;
   /** Button size */
   size?: ComponentSize;
   /** Button type attribute */
   type?: "button" | "submit" | "reset";
   /** Whether button takes full width */
   fullWidth?: boolean;
-  /** Loading state */
+  /** Loading state (Radzen: Busy button) */
   loading?: boolean;
   /** Disabled state */
   disabled?: boolean;
@@ -34,6 +47,22 @@ export interface ButtonProps {
 // Re-export types for convenience
 export type ButtonIntent = HealthcareIntent;
 export type ButtonSize = ComponentSize;
+
+/**
+ * Generate variant-based CSS classes
+ */
+function getVariantClasses(variant: ButtonVariant): string {
+  const variantClassMap: Record<ButtonVariant, string> = {
+    filled: "btn-filled",
+    flat: "btn-flat",
+    outlined: "btn-outlined", 
+    text: "btn-text",
+    fab: "btn-fab",
+    circular: "btn-circular"
+  };
+
+  return variantClassMap[variant];
+}
 
 /**
  * Generate intent-based CSS classes using CSS custom properties
@@ -75,6 +104,7 @@ const baseButtonClass = "btn";
 export const Button = component$<ButtonProps>((props) => {
   const {
     intent = "primary",
+    variant = "filled",
     size = "md",
     type = "button",
     fullWidth = false,
@@ -101,13 +131,15 @@ export const Button = component$<ButtonProps>((props) => {
     isFocused.value = false;
   });
 
-  // Get size and intent classes from our CSS custom properties
+  // Get variant, size and intent classes from our CSS custom properties
+  const variantClasses = getVariantClasses(variant);
   const sizeClasses = getSizeClasses(size);
   const intentClasses = getIntentClasses(intent);
 
   // Build complete class string using CSS custom properties approach
   const buttonClasses = [
     baseButtonClass,
+    variantClasses,
     intentClasses,
     sizeClasses,
     fullWidth && "w-full",
@@ -121,7 +153,9 @@ export const Button = component$<ButtonProps>((props) => {
 
   // Generate accessible label
   const accessibleLabel = ariaLabel || 
-    (emergency ? "Emergency action button" : undefined);
+    (emergency ? "Emergency action button" : 
+     variant === "fab" ? "Floating action button" :
+     variant === "circular" ? "Circular button" : undefined);
 
   return (
     <button
@@ -133,15 +167,20 @@ export const Button = component$<ButtonProps>((props) => {
       aria-label={accessibleLabel}
       data-emergency={emergency}
       data-medical-device={medicalDeviceMode}
+      data-variant={variant}
+      data-intent={intent}
       onClick$={onClick$}
       onFocus$={handleFocus$}
       onBlur$={handleBlur$}
       {...rest}
     >
-      {/* Loading Spinner */}
+      {/* Loading Spinner - Adapted for different variants */}
       {loading && (
         <svg
-          class="animate-spin -ml-1 mr-2 h-4 w-4"
+          class={[
+            "animate-spin h-4 w-4",
+            variant === "fab" || variant === "circular" ? "mx-0" : "-ml-1 mr-2"
+          ].join(" ")}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -162,15 +201,17 @@ export const Button = component$<ButtonProps>((props) => {
         </svg>
       )}
       
-      {/* Button Content */}
-      <span class={loading ? "opacity-75" : undefined}>
-        <Slot />
-      </span>
+      {/* Button Content - Hidden when FAB/Circular is loading */}
+      {!(loading && (variant === "fab" || variant === "circular")) && (
+        <span class={loading ? "opacity-75" : undefined}>
+          <Slot />
+        </span>
+      )}
       
       {/* Loading state announcement for screen readers */}
       {loading && (
         <span class="sr-only" aria-live="polite">
-          Loading, please wait
+          {variant === "fab" || variant === "circular" ? "Action in progress" : "Loading, please wait"}
         </span>
       )}
       
@@ -178,6 +219,17 @@ export const Button = component$<ButtonProps>((props) => {
       {emergency && (
         <span class="sr-only">
           Emergency function - Handle with care
+        </span>
+      )}
+      
+      {/* Variant announcement for screen readers when focused */}
+      {isFocused.value && variant !== "filled" && (
+        <span class="sr-only">
+          {variant === "fab" ? "Floating action button" :
+           variant === "circular" ? "Circular button" :
+           variant === "outlined" ? "Outlined button" :
+           variant === "text" ? "Text button" :
+           variant === "flat" ? "Flat button" : ""}
         </span>
       )}
     </button>

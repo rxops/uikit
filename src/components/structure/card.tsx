@@ -211,9 +211,9 @@ export const Card = component$<CardProps>((props) => {
     purpose === 'emergency' && 'border-danger-300 bg-danger-50',
     
     // Priority styling
-    priority === 'high' && 'ring-1 ring-caution-300',
-    priority === 'critical' && 'ring-2 ring-danger-400',
-    priority === 'emergency' && 'ring-2 ring-danger-600 bg-danger-100',
+    priority === 'high' && 'ring-1',
+    priority === 'critical' && 'ring-2',
+    priority === 'emergency' && 'ring-2',
     
     // Status styling
     status === 'caution' && 'border-l-4 border-l-caution-500',
@@ -223,11 +223,11 @@ export const Card = component$<CardProps>((props) => {
     // Interactive styling
     interactive && [
       'cursor-pointer hover:shadow-md',
-      'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
+      'focus:outline-none focus:ring-2 focus:ring-offset-2'
     ],
     
     // Critical styling
-    isCritical && 'ring-1 ring-danger-400',
+    isCritical && 'ring-1',
     
     // Custom classes
     className
@@ -246,6 +246,18 @@ export const Card = component$<CardProps>((props) => {
     'aria-label': title || `${purpose} card`,
     'aria-describedby': subtitle ? `${rest.id || 'card'}-subtitle` : undefined,
     'onClick$': interactive ? onClick$ : undefined,
+  };
+
+  // Generate style object for proper tokenized colors
+  const cardStyle = {
+    ...(priority === 'high' && { '--tw-ring-color': 'var(--color-caution)' }),
+    ...(priority === 'critical' && { '--tw-ring-color': 'var(--color-danger)' }),
+    ...(priority === 'emergency' && { 
+      '--tw-ring-color': 'var(--color-danger-dark)',
+      backgroundColor: 'var(--color-danger-lighter)'
+    }),
+    ...(interactive && { '--tw-ring-color': 'var(--color-primary)' }),
+    ...(isCritical && { '--tw-ring-color': 'var(--color-danger)' })
   };
 
   // Status indicator component
@@ -318,6 +330,7 @@ export const Card = component$<CardProps>((props) => {
   return (
     <div
       class={cardClasses}
+      style={cardStyle}
       {...enhancedProps}
       {...rest}
     >

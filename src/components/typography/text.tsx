@@ -298,17 +298,17 @@ export const Text = component$<TextProps>((props) => {
     interactive && [
       'cursor-pointer transition-all duration-200',
       'hover:opacity-80',
-      'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500'
+      'focus:outline-none focus:ring-2 focus:ring-offset-2'
     ],
     
     // Medical device enhanced focus indicators
     interactive && medicalDeviceMode && [
-      'focus:ring-4 focus:ring-blue-200 focus:shadow-lg'
+      'focus:ring-4 focus:shadow-lg'
     ],
     
     // Emergency mode styling
     emergencyMode && [
-      'ring-2 ring-caution-400 bg-caution-lighter px-2 py-1 rounded'
+      'ring-2 px-2 py-1 rounded'
     ],
     
     // Custom classes (highest priority)
@@ -318,7 +318,12 @@ export const Text = component$<TextProps>((props) => {
 
   // Merge styles properly
   const textStyle = colorStyling.style ? Object.entries(colorStyling.style).map(([key, value]) => `${key}:${value}`).join(';') : undefined;
-  const mergedStyle = [textStyle, style].filter(Boolean).join(';');
+  
+  // Add focus ring and emergency styling
+  const focusRingStyle = interactive ? '--tw-ring-color:var(--color-primary);' : '';
+  const emergencyRingStyle = emergencyMode ? '--tw-ring-color:var(--color-caution);background-color:var(--color-caution-lighter);color:var(--color-caution-darker);' : '';
+  
+  const mergedStyle = [textStyle, focusRingStyle, emergencyRingStyle, style].filter(Boolean).join(';');
 
   // Element props for forwarding
   const elementProps = {

@@ -47,6 +47,41 @@ export {
   type BaseComponentProps
 } from './utils';
 
+// Export composition utilities
+export {
+  LoadingWrapper,
+  ErrorBoundaryWrapper,
+  MedicalDeviceWrapper,
+  EmergencyWrapper,
+  breakpoints,
+  resolveResponsiveProp,
+  mergeClasses as mergeClassNames,
+  getIntentClasses,
+  getSizeClasses,
+  animations,
+  getAnimationClass,
+  getHealthcareAria,
+  getMedicalAnnouncement,
+} from './composition-utils';
+
+// Export advanced healthcare utilities
+export {
+  createVariantClass,
+  sizeConfig,
+  focusConfig,
+  getClinicalPriorityClasses,
+  clinicalPriorityToIntent,
+  getFocusClasses,
+  validateClinicalSafety,
+  type ClinicalPriority,
+  type ThemeContext,
+  type ComponentState,
+  type VariantConfig,
+  type ClinicalProps,
+  type EnhancedComponentBaseProps,
+  type PolymorphicProps,
+} from './healthcare-utils';
+
 // Export type definitions
 export type {
   // Base types

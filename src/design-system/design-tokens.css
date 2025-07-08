@@ -1,376 +1,2337 @@
 /**
  * RxOps Design System - CSS Custom Properties
  * 
- * This file generates CSS custom properties from our design tokens.
- * These CSS variables can be used across any CSS framework or vanilla CSS.
+ * Auto-generated from design tokens in tokens.ts
+ * This file contains ALL design system tokens as CSS custom properties.
+ * 
+ * DO NOT EDIT MANUALLY - Use the css-variables.ts generator instead.
  */
 
 @layer base {
   :root {
-    /* ==================== PRIMARY COLORS ==================== */
-    --color-primary-lighter: #dbeafe;  /* blue-100 */
-    --color-primary-light: #93c5fd;    /* blue-300 */
-    --color-primary: #2563eb;          /* blue-600 */
-    --color-primary-dark: #1d4ed8;     /* blue-700 */
-    --color-primary-darker: #1e40af;   /* blue-800 */
-    
-    /* ==================== SECONDARY COLORS ==================== */
-    --color-secondary-lighter: #f3f4f6; /* gray-100 */
-    --color-secondary-light: #e5e7eb;   /* gray-200 */
-    --color-secondary: #d1d5db;         /* gray-300 */
-    --color-secondary-dark: #9ca3af;    /* gray-400 */
-    --color-secondary-darker: #6b7280;  /* gray-500 */
-    
-    /* ==================== SUCCESS COLORS ==================== */
-    --color-success-lighter: #dcfce7;   /* green-100 */
-    --color-success-light: #86efac;     /* green-300 */
-    --color-success: #16a34a;           /* green-600 */
-    --color-success-dark: #15803d;      /* green-700 */
-    --color-success-darker: #166534;    /* green-800 */
-    
-    /* ==================== CAUTION COLORS ==================== */
-    --color-caution-lighter: #fefce8;   /* amber-100 */
-    --color-caution-light: #fde68a;     /* amber-300 */
-    --color-caution: #d97706;           /* amber-600 */
-    --color-caution-dark: #b45309;      /* amber-700 */
-    --color-caution-darker: #92400e;    /* amber-800 */
-    
-    /* ==================== DANGER COLORS ==================== */
-    --color-danger-lighter: #fee2e2;     /* red-100 */
-    --color-danger-light: #fca5a5;       /* red-300 */
-    --color-danger: #dc2626;             /* red-600 */
-    --color-danger-dark: #b91c1c;        /* red-700 */
-    --color-danger-darker: #991b1b;      /* red-800 */
-    
-    /* ==================== INFO COLORS ==================== */
-    --color-info-lighter: #e0f2fe;      /* sky-100 */
-    --color-info-light: #7dd3fc;        /* sky-300 */
-    --color-info: #0284c7;              /* sky-600 */
-    --color-info-dark: #0369a1;         /* sky-700 */
-    --color-info-darker: #075985;       /* sky-800 */
-    
-    /* ==================== BASE COLORS ==================== */
-    --color-base-lighter: #f3f4f6;   /* gray-100 */
-    --color-base-light: #d1d5db;     /* gray-300 */
-    --color-base: #4b5563;           /* gray-600 */
-    --color-base-dark: #374151;      /* gray-700 */
-    --color-base-darker: #1f2937;    /* gray-800 */
-    
-    /* ==================== SPECIAL COLORS ==================== */
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-transparent: transparent;
-    
-    /* ==================== SPACING TOKENS ==================== */
-    --space-0: 0px;
-    --space-1: 0.25rem;  /* 4px */
-    --space-2: 0.5rem;   /* 8px */
-    --space-3: 0.75rem;  /* 12px */
-    --space-4: 1rem;     /* 16px */
-    --space-5: 1.25rem;  /* 20px */
-    --space-6: 1.5rem;   /* 24px */
-    --space-8: 2rem;     /* 32px */
-    --space-10: 2.5rem;  /* 40px */
-    --space-12: 3rem;    /* 48px */
-    --space-16: 4rem;    /* 64px */
-    --space-20: 5rem;    /* 80px */
-    --space-24: 6rem;    /* 96px */
-    
-    /* ==================== COMPONENT SIZING ==================== */
-    --size-xs-padding-x: var(--space-2);
-    --size-xs-padding-y: var(--space-1);
-    --size-xs-text: 0.75rem;
-    --size-xs-height: 1.75rem;
-    
-    --size-sm-padding-x: var(--space-3);
-    --size-sm-padding-y: var(--space-1);
-    --size-sm-text: 0.875rem;
-    --size-sm-height: 2rem;
-    
-    --size-md-padding-x: var(--space-4);
-    --size-md-padding-y: var(--space-2);
-    --size-md-text: 1rem;
-    --size-md-height: 2.5rem;
-    
-    --size-lg-padding-x: var(--space-6);
-    --size-lg-padding-y: var(--space-3);
-    --size-lg-text: 1.125rem;
-    --size-lg-height: 3rem;
-    
-    --size-xl-padding-x: var(--space-8);
-    --size-xl-padding-y: var(--space-4);
-    --size-xl-text: 1.25rem;
-    --size-xl-height: 3.5rem;
-    
-    /* ==================== BORDER COLORS ==================== */
-    --border-subtle: #f3f4f6;        /* gray-100 - very light borders */
-    --border-light: #e5e7eb;         /* gray-200 - light borders */
-    --border-default: #d1d5db;       /* gray-300 - default borders */
-    --border-medium: #9ca3af;        /* gray-400 - medium borders */
-    --border-strong: #6b7280;        /* gray-500 - strong borders */
-    
-    /* ==================== BORDER RADIUS ==================== */
-    --radius-none: 0px;
-    --radius-sm: 0.125rem;
-    --radius-default: 0.25rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
-    --radius-full: 9999px;
-    
-    /* ==================== SHADOWS ==================== */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    
-    /* ==================== TRANSITIONS ==================== */
-    --transition-fast: 150ms ease-in-out;
-    --transition-default: 200ms ease-in-out;
-    --transition-slow: 300ms ease-in-out;
-    
-    /* ==================== HEALTHCARE SPECIFIC ==================== */
-    --healthcare-focus-ring-width: 2px;
-    --healthcare-medical-device-focus-ring-width: 4px;
-    --healthcare-emergency-ring-color: var(--color-danger);
-    --healthcare-critical-ring-color: var(--color-caution);
-  }
-}
+    /* =============================================== */
+    /*    RxOps Design System - Global Tokens      */
+    /* =============================================== */
 
-@layer components {
-  /* ==================== BUTTON COMPONENTS ==================== */
-  
-  /* Base button styles */
+    /* 1. Color System */
+    --rx-color-primary-50: #eff6ff;
+    --rx-color-primary-100: #dbeafe;
+    --rx-color-primary-200: #bfdbfe;
+    --rx-color-primary-300: #93c5fd;
+    --rx-color-primary-400: #60a5fa;
+    --rx-color-primary-500: #3b82f6;
+    --rx-color-primary-600: #2563eb;
+    --rx-color-primary-700: #1d4ed8;
+    --rx-color-primary-800: #1e40af;
+    --rx-color-primary-900: #1e3a8a;
+    --rx-color-primary-lighter: #dbeafe;
+    --rx-color-primary-light: #93c5fd;
+    --rx-color-primary: #2563eb;
+    --rx-color-primary-dark: #1d4ed8;
+    --rx-color-primary-darker: #1e40af;
+    --rx-color-secondary-0: #ffffff;
+    --rx-color-secondary-50: #f9fafb;
+    --rx-color-secondary-100: #f3f4f6;
+    --rx-color-secondary-200: #e5e7eb;
+    --rx-color-secondary-300: #d1d5db;
+    --rx-color-secondary-400: #9ca3af;
+    --rx-color-secondary-500: #6b7280;
+    --rx-color-secondary-600: #4b5563;
+    --rx-color-secondary-700: #374151;
+    --rx-color-secondary-800: #1f2937;
+    --rx-color-secondary-900: #111827;
+    --rx-color-secondary-lighter: #f3f4f6;
+    --rx-color-secondary-light: #d1d5db;
+    --rx-color-secondary: #4b5563;
+    --rx-color-secondary-dark: #374151;
+    --rx-color-secondary-darker: #1f2937;
+    --rx-color-base-50: #fafafa;
+    --rx-color-base-100: #f5f5f5;
+    --rx-color-base-200: #e5e5e5;
+    --rx-color-base-300: #d4d4d4;
+    --rx-color-base-400: #a3a3a3;
+    --rx-color-base-500: #737373;
+    --rx-color-base-600: #525252;
+    --rx-color-base-700: #404040;
+    --rx-color-base-800: #262626;
+    --rx-color-base-900: #171717;
+    --rx-color-base-lighter: #f5f5f5;
+    --rx-color-base-light: #e5e5e5;
+    --rx-color-base: #d4d4d4;
+    --rx-color-base-dark: #a3a3a3;
+    --rx-color-base-darker: #737373;
+    --rx-color-text-50: #f9fafb;
+    --rx-color-text-100: #f3f4f6;
+    --rx-color-text-200: #e5e7eb;
+    --rx-color-text-300: #d1d5db;
+    --rx-color-text-400: #9ca3af;
+    --rx-color-text-500: #6b7280;
+    --rx-color-text-600: #4b5563;
+    --rx-color-text-700: #374151;
+    --rx-color-text-800: #1f2937;
+    --rx-color-text-900: #111827;
+    --rx-color-text-lighter: #9ca3af;
+    --rx-color-text-light: #6b7280;
+    --rx-color-text: #4b5563;
+    --rx-color-text-dark: #374151;
+    --rx-color-text-darker: #1f2937;
+    --rx-color-success-50: #f0fdf4;
+    --rx-color-success-100: #dcfce7;
+    --rx-color-success-200: #bbf7d0;
+    --rx-color-success-300: #86efac;
+    --rx-color-success-400: #4ade80;
+    --rx-color-success-500: #22c55e;
+    --rx-color-success-600: #16a34a;
+    --rx-color-success-700: #15803d;
+    --rx-color-success-800: #166534;
+    --rx-color-success-900: #14532d;
+    --rx-color-success-lighter: #dcfce7;
+    --rx-color-success-light: #86efac;
+    --rx-color-success: #16a34a;
+    --rx-color-success-dark: #15803d;
+    --rx-color-success-darker: #166534;
+    --rx-color-caution-50: #fffbeb;
+    --rx-color-caution-100: #fefce8;
+    --rx-color-caution-200: #fef3c7;
+    --rx-color-caution-300: #fde68a;
+    --rx-color-caution-400: #fbbf24;
+    --rx-color-caution-500: #f59e0b;
+    --rx-color-caution-600: #d97706;
+    --rx-color-caution-700: #b45309;
+    --rx-color-caution-800: #92400e;
+    --rx-color-caution-900: #78350f;
+    --rx-color-caution-lighter: #fde68a;
+    --rx-color-caution-light: #f59e0b;
+    --rx-color-caution: #d97706;
+    --rx-color-caution-rgb: 217, 119, 6;
+    --rx-color-caution-dark: #b45309;
+    --rx-color-caution-darker: #92400e;
+    --rx-color-danger-50: #fef2f2;
+    --rx-color-danger-100: #fee2e2;
+    --rx-color-danger-200: #fecaca;
+    --rx-color-danger-300: #fca5a5;
+    --rx-color-danger-400: #f87171;
+    --rx-color-danger-500: #ef4444;
+    --rx-color-danger-600: #dc2626;
+    --rx-color-danger-700: #b91c1c;
+    --rx-color-danger-800: #991b1b;
+    --rx-color-danger-900: #7f1d1d;
+    --rx-color-danger-lighter: #fee2e2;
+    --rx-color-danger-light: #fca5a5;
+    --rx-color-danger: #dc2626;
+    --rx-color-danger-rgb: 220, 38, 38;
+    --rx-color-danger-dark: #b91c1c;
+    --rx-color-danger-darker: #991b1b;
+    --rx-color-info-50: #ecfeff;
+    --rx-color-info-100: #e0f2fe;
+    --rx-color-info-200: #bae6fd;
+    --rx-color-info-300: #7dd3fc;
+    --rx-color-info-400: #38bdf8;
+    --rx-color-info-500: #0ea5e9;
+    --rx-color-info-600: #0284c7;
+    --rx-color-info-700: #0369a1;
+    --rx-color-info-800: #075985;
+    --rx-color-info-900: #0c4a6e;
+    --rx-color-info-lighter: #e0f2fe;
+    --rx-color-info-light: #7dd3fc;
+    --rx-color-info: #0284c7;
+    --rx-color-info-dark: #0369a1;
+    --rx-color-info-darker: #075985;
+
+    /* 2. Spacing System */
+    --rx-spacing-0: 0px;
+    --rx-spacing-1: 0.25rem;
+    --rx-spacing-2: 0.5rem;
+    --rx-spacing-3: 0.75rem;
+    --rx-spacing-4: 1rem;
+    --rx-spacing-5: 1.25rem;
+    --rx-spacing-6: 1.5rem;
+    --rx-spacing-8: 2rem;
+    --rx-spacing-10: 2.5rem;
+    --rx-spacing-12: 3rem;
+    --rx-spacing-16: 4rem;
+    --rx-spacing-20: 5rem;
+    --rx-spacing-24: 6rem;
+
+    /* 3. Typography System */
+    --rx-font-sans: Inter, system-ui, sans-serif;
+    --rx-font-mono: Monaco, Consolas, monospace;
+    --rx-text-xs: 0.75rem;
+    --rx-text-xs-line-height: 1rem;
+    --rx-text-sm: 0.875rem;
+    --rx-text-sm-line-height: 1.25rem;
+    --rx-text-base: 1rem;
+    --rx-text-base-line-height: 1.5rem;
+    --rx-text-lg: 1.125rem;
+    --rx-text-lg-line-height: 1.75rem;
+    --rx-text-xl: 1.25rem;
+    --rx-text-xl-line-height: 1.75rem;
+    --rx-text-2xl: 1.5rem;
+    --rx-text-2xl-line-height: 2rem;
+    --rx-text-3xl: 1.875rem;
+    --rx-text-3xl-line-height: 2.25rem;
+    --rx-text-4xl: 2.25rem;
+    --rx-text-4xl-line-height: 2.5rem;
+    --rx-text-5xl: 3rem;
+    --rx-text-5xl-line-height: 1;
+    --rx-font-thin: 100;
+    --rx-font-light: 300;
+    --rx-font-normal: 400;
+    --rx-font-medium: 500;
+    --rx-font-semibold: 600;
+    --rx-font-bold: 700;
+    --rx-font-extrabold: 800;
+    --rx-font-black: 900;
+
+    /* 4. Border Radius System */
+    --rx-radius-none: 0px;
+    --rx-radius-sm: 0.125rem;
+    --rx-radius: 0.25rem;
+    --rx-radius-md: 0.375rem;
+    --rx-radius-lg: 0.5rem;
+    --rx-radius-xl: 0.75rem;
+    --rx-radius-2xl: 1rem;
+    --rx-radius-3xl: 1.5rem;
+    --rx-radius-full: 9999px;
+
+    /* Size-responsive roundness system */
+    --rx-rounded-xs: var(--rx-radius-sm);
+    --rx-rounded-sm: var(--rx-radius);
+    --rx-rounded-md: var(--rx-radius-md);
+    --rx-rounded-lg: var(--rx-radius-lg);
+    --rx-rounded-xl: var(--rx-radius-xl);
+    --rx-rounded-2xl: var(--rx-radius-2xl);
+    --rx-rounded-3xl: var(--rx-radius-3xl);
+    --rx-rounded-full: var(--rx-radius-full);
+
+    /* Circular button dimensions for Material 3 style FABs */
+    --rx-fab-xs: 2rem;
+    /* 32px - Mini FAB */
+    --rx-fab-sm: 2.5rem;
+    /* 40px - Small FAB */
+    --rx-fab-md: 3.5rem;
+    /* 56px - Standard FAB */
+    --rx-fab-lg: 4rem;
+    /* 64px - Large FAB */
+    --rx-fab-xl: 5rem;
+    /* 80px - Extended FAB */
+
+    /* 5. Shadows (Box Shadow) */
+    --rx-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --rx-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --rx-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --rx-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --rx-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* 6. Animation & Transitions */
+    --rx-transition-fast: all 150ms ease-in-out;
+    --rx-transition: all 200ms ease-in-out;
+    --rx-transition-slow: all 300ms ease-in-out;
+    --rx-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --rx-easing-in: cubic-bezier(0.4, 0, 1, 1);
+    --rx-easing-out: cubic-bezier(0, 0, 0.2, 1);
+    --rx-easing-inout: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 7. Healthcare-Specific Tokens */
+    --rx-focus-ring-width: 2px;
+    --rx-focus-ring-style: solid;
+    --rx-focus-ring-offset: 2px;
+    --rx-medical-device-focus-ring-width: 4px;
+    --rx-medical-device-focus-ring-style: solid;
+    --rx-medical-device-focus-ring-offset: 4px;
+
+    /* Component sizing with CSS variables */
+    --size-xs-padding-x: var(--rx-spacing-2);
+    --size-xs-padding-y: var(--rx-spacing-1);
+    --size-xs-text: var(--rx-text-xs);
+    --size-xs-height: 1.75rem;
+    --size-xs-border-radius: var(--rx-radius-md);
+
+    --size-sm-padding-x: var(--rx-spacing-3);
+    --size-sm-padding-y: var(--rx-spacing-1);
+    --size-sm-text: var(--rx-text-sm);
+    --size-sm-height: 2rem;
+    --size-sm-border-radius: var(--rx-radius);
+
+    --size-md-padding-x: var(--rx-spacing-4);
+    --size-md-padding-y: var(--rx-spacing-2);
+    --size-md-text: var(--rx-text-base);
+    --size-md-height: 2.5rem;
+    --size-md-border-radius: var(--rx-radius-md);
+
+    --size-lg-padding-x: var(--rx-spacing-6);
+    --size-lg-padding-y: var(--rx-spacing-3);
+    --size-lg-text: var(--rx-text-lg);
+    --size-lg-height: 3rem;
+    --size-lg-border-radius: var(--rx-radius-lg);
+
+    --size-xl-padding-x: var(--rx-spacing-8);
+    --size-xl-padding-y: var(--rx-spacing-4);
+    --size-xl-text: var(--rx-text-xl);
+    --size-xl-height: 3.5rem;
+    --size-xl-border-radius: var(--rx-radius-xl);
+
+    /* Border colors */
+    --border-subtle: #f3f4f6;
+    --border-light: #e5e7eb;
+    --border-default: #d1d5db;
+    --border-medium: #9ca3af;
+    --border-strong: #6b7280;
+
+    /* Transition tokens */
+    --transition-fast: var(--rx-transition-fast);
+    --transition-default: var(--rx-transition);
+    --transition-slow: var(--rx-transition-slow);
+
+    /* Healthcare specific tokens */
+    --healthcare-emergency-ring-color: var(--rx-color-danger);
+    --healthcare-medical-device-focus-ring-width: var(--rx-medical-device-focus-ring-width);
+    --healthcare-critical-ring-color: var(--rx-color-caution-dark);
+  }
+
+  /* ==================== BUTTON COMPONENT CLASSES ==================== */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid;
+    transition: var(--rx-transition);
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping in buttons */
+    min-width: fit-content;
+  }
+
+  .btn:focus {
+    outline: 2px solid var(--rx-color-primary);
+    outline-offset: 2px;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* ==================== BUTTON SIZE VARIANTS ==================== */
+  .btn-xs {
+    padding: var(--size-xs-padding-y) var(--size-xs-padding-x);
+    font-size: var(--size-xs-text);
+    min-height: var(--size-xs-height);
+    border-radius: var(--size-xs-border-radius);
+  }
+
+  .btn-sm {
+    padding: var(--size-sm-padding-y) var(--size-sm-padding-x);
+    font-size: var(--size-sm-text);
+    min-height: var(--size-sm-height);
+    border-radius: var(--size-sm-border-radius);
+  }
+
+  .btn-md {
+    padding: var(--size-md-padding-y) var(--size-md-padding-x);
+    font-size: var(--size-md-text);
+    min-height: var(--size-md-height);
+    border-radius: var(--size-md-border-radius);
+  }
+
+  .btn-lg {
+    padding: var(--size-lg-padding-y) var(--size-lg-padding-x);
+    font-size: var(--size-lg-text);
+    min-height: var(--size-lg-height);
+    border-radius: var(--size-lg-border-radius);
+  }
+
+  .btn-xl {
+    padding: var(--size-xl-padding-y) var(--size-xl-padding-x);
+    font-size: var(--size-xl-text);
+    min-height: var(--size-xl-height);
+    border-radius: var(--size-xl-border-radius);
+  }
+
+  /* ==================== BUTTON VARIANT STYLES ==================== */
+
+  /* FILLED VARIANT (Default) - Inspired by Radzen */
+  .btn-filled {
+    /* Default filled styling - enhances the base button */
+    box-shadow: var(--rx-shadow-sm);
+  }
+
+  .btn-filled:hover:not(:disabled) {
+    box-shadow: var(--rx-shadow-md);
+    transform: translateY(-1px);
+  }
+
+  .btn-filled:active {
+    transform: translateY(0);
+    box-shadow: var(--rx-shadow-sm);
+  }
+
+  /* FLAT VARIANT - Subtle background, no borders */
+  .btn-flat {
+    border: none;
+    box-shadow: none;
+  }
+
+  .btn-flat.btn-primary {
+    background-color: var(--rx-color-primary-100);
+    color: var(--rx-color-primary-700);
+  }
+
+  .btn-flat.btn-primary:hover:not(:disabled) {
+    background-color: var(--rx-color-primary-200);
+    color: var(--rx-color-primary-800);
+  }
+
+  .btn-flat.btn-secondary {
+    background-color: var(--rx-color-secondary-100);
+    color: var(--rx-color-secondary-700);
+  }
+
+  .btn-flat.btn-secondary:hover:not(:disabled) {
+    background-color: var(--rx-color-secondary-200);
+    color: var(--rx-color-secondary-800);
+  }
+
+  .btn-flat.btn-success {
+    background-color: var(--rx-color-success-100);
+    color: var(--rx-color-success-700);
+  }
+
+  .btn-flat.btn-success:hover:not(:disabled) {
+    background-color: var(--rx-color-success-200);
+    color: var(--rx-color-success-800);
+  }
+
+  .btn-flat.btn-caution {
+    background-color: var(--rx-color-caution-100);
+    color: var(--rx-color-caution-700);
+  }
+
+  .btn-flat.btn-caution:hover:not(:disabled) {
+    background-color: var(--rx-color-caution-200);
+    color: var(--rx-color-caution-800);
+  }
+
+  .btn-flat.btn-danger {
+    background-color: var(--rx-color-danger-100);
+    color: var(--rx-color-danger-700);
+  }
+
+  .btn-flat.btn-danger:hover:not(:disabled) {
+    background-color: var(--rx-color-danger-200);
+    color: var(--rx-color-danger-800);
+  }
+
+  .btn-flat.btn-info {
+    background-color: var(--rx-color-info-100);
+    color: var(--rx-color-info-700);
+  }
+
+  .btn-flat.btn-info:hover:not(:disabled) {
+    background-color: var(--rx-color-info-200);
+    color: var(--rx-color-info-800);
+  }
+
+  /* OUTLINED VARIANT - Border only, transparent background */
+  .btn-outlined {
+    background-color: transparent;
     border-width: 1px;
     border-style: solid;
-    transition: all var(--transition-default);
+  }
+
+  .btn-outlined.btn-primary {
+    border-color: var(--rx-color-primary);
+    color: var(--rx-color-primary);
+  }
+
+  .btn-outlined.btn-primary:hover:not(:disabled) {
+    background-color: var(--rx-color-primary-50);
+    border-color: var(--rx-color-primary-dark);
+    color: var(--rx-color-primary-dark);
+  }
+
+  .btn-outlined.btn-secondary {
+    border-color: var(--rx-color-secondary);
+    color: var(--rx-color-secondary);
+  }
+
+  .btn-outlined.btn-secondary:hover:not(:disabled) {
+    background-color: var(--rx-color-secondary-50);
+    border-color: var(--rx-color-secondary-dark);
+    color: var(--rx-color-secondary-dark);
+  }
+
+  .btn-outlined.btn-success {
+    border-color: var(--rx-color-success);
+    color: var(--rx-color-success);
+  }
+
+  .btn-outlined.btn-success:hover:not(:disabled) {
+    background-color: var(--rx-color-success-50);
+    border-color: var(--rx-color-success-dark);
+    color: var(--rx-color-success-dark);
+  }
+
+  .btn-outlined.btn-caution {
+    border-color: var(--rx-color-caution);
+    color: var(--rx-color-caution);
+  }
+
+  .btn-outlined.btn-caution:hover:not(:disabled) {
+    background-color: var(--rx-color-caution-50);
+    border-color: var(--rx-color-caution-dark);
+    color: var(--rx-color-caution-dark);
+  }
+
+  .btn-outlined.btn-danger {
+    border-color: var(--rx-color-danger);
+    color: var(--rx-color-danger);
+  }
+
+  .btn-outlined.btn-danger:hover:not(:disabled) {
+    background-color: var(--rx-color-danger-50);
+    border-color: var(--rx-color-danger-dark);
+    color: var(--rx-color-danger-dark);
+  }
+
+  .btn-outlined.btn-info {
+    border-color: var(--rx-color-info);
+    color: var(--rx-color-info);
+  }
+
+  .btn-outlined.btn-info:hover:not(:disabled) {
+    background-color: var(--rx-color-info-50);
+    border-color: var(--rx-color-info-dark);
+    color: var(--rx-color-info-dark);
+  }
+
+  /* TEXT VARIANT - No background, no border, text only */
+  .btn-text {
+    background-color: transparent;
+    border: none !important;
+    box-shadow: none;
+    padding-left: var(--rx-spacing-2);
+    padding-right: var(--rx-spacing-2);
+  }
+
+  .btn-text.btn-primary {
+    color: var(--rx-color-primary);
+  }
+
+  .btn-text.btn-primary:hover:not(:disabled) {
+    background-color: var(--rx-color-primary-50);
+    color: var(--rx-color-primary-dark);
+    border: none;
+  }
+
+  .btn-text.btn-secondary {
+    color: var(--rx-color-secondary);
+  }
+
+  .btn-text.btn-secondary:hover:not(:disabled) {
+    background-color: var(--rx-color-secondary-50);
+    color: var(--rx-color-secondary-dark);
+    border: none;
+  }
+
+  .btn-text.btn-success {
+    color: var(--rx-color-success);
+  }
+
+  .btn-text.btn-success:hover:not(:disabled) {
+    background-color: var(--rx-color-success-50);
+    color: var(--rx-color-success-dark);
+    border: none;
+  }
+
+  .btn-text.btn-caution {
+    color: var(--rx-color-caution);
+  }
+
+  .btn-text.btn-caution:hover:not(:disabled) {
+    background-color: var(--rx-color-caution-50);
+    color: var(--rx-color-caution-dark);
+    border: none;
+  }
+
+  .btn-text.btn-danger {
+    color: var(--rx-color-danger);
+  }
+
+  .btn-text.btn-danger:hover:not(:disabled) {
+    background-color: var(--rx-color-danger-50);
+    color: var(--rx-color-danger-dark);
+    border: none;
+  }
+
+  .btn-text.btn-info {
+    color: var(--rx-color-info);
+  }
+
+  .btn-text.btn-info:hover:not(:disabled) {
+    background-color: var(--rx-color-info-50);
+    color: var(--rx-color-info-dark);
+    border: none;
+  }
+
+  /* ==================== CIRCULAR/FAB VARIANTS ==================== */
+
+  /* FAB (Floating Action Button) - Material 3 Inspired */
+  .btn-fab {
+    border-radius: var(--rx-radius-full);
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--rx-shadow-lg);
+    border: none;
+  }
+
+  .btn-fab:hover:not(:disabled) {
+    box-shadow: var(--rx-shadow-xl);
+    transform: translateY(-1px);
+  }
+
+  .btn-fab:active {
+    transform: translateY(0);
+    box-shadow: var(--rx-shadow-md);
+  }
+
+  /* FAB Size Variants */
+  .btn-fab.btn-xs {
+    width: var(--rx-fab-xs);
+    height: var(--rx-fab-xs);
+    font-size: var(--rx-text-sm);
+  }
+
+  .btn-fab.btn-sm {
+    width: var(--rx-fab-sm);
+    height: var(--rx-fab-sm);
+    font-size: var(--rx-text-base);
+  }
+
+  .btn-fab.btn-md {
+    width: var(--rx-fab-md);
+    height: var(--rx-fab-md);
+    font-size: var(--rx-text-lg);
+  }
+
+  .btn-fab.btn-lg {
+    width: var(--rx-fab-lg);
+    height: var(--rx-fab-lg);
+    font-size: var(--rx-text-xl);
+  }
+
+  .btn-fab.btn-xl {
+    width: var(--rx-fab-xl);
+    height: var(--rx-fab-xl);
+    font-size: var(--rx-text-2xl);
+  }
+
+  /* Circular variant (like FAB but without elevation) */
+  .btn-circular {
+    border-radius: var(--rx-radius-full);
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-circular.btn-xs {
+    width: var(--rx-fab-xs);
+    height: var(--rx-fab-xs);
+    font-size: var(--rx-text-sm);
+  }
+
+  .btn-circular.btn-sm {
+    width: var(--rx-fab-sm);
+    height: var(--rx-fab-sm);
+    font-size: var(--rx-text-base);
+  }
+
+  .btn-circular.btn-md {
+    width: var(--rx-fab-md);
+    height: var(--rx-fab-md);
+    font-size: var(--rx-text-lg);
+  }
+
+  .btn-circular.btn-lg {
+    width: var(--rx-fab-lg);
+    height: var(--rx-fab-lg);
+    font-size: var(--rx-text-xl);
+  }
+
+  .btn-circular.btn-xl {
+    width: var(--rx-fab-xl);
+    height: var(--rx-fab-xl);
+    font-size: var(--rx-text-2xl);
+  }
+
+  /* Intent-based button styling */
+  .btn-primary {
+    background-color: var(--rx-color-primary);
+    border-color: var(--rx-color-primary);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--rx-color-primary-dark);
+    border-color: var(--rx-color-primary-dark);
+  }
+
+  .btn-primary:focus {
+    outline: 2px solid var(--rx-color-primary);
+    outline-offset: 2px;
+  }
+
+  .btn-secondary {
+    background-color: var(--rx-color-secondary-lighter);
+    border-color: var(--rx-color-secondary);
+    color: var(--rx-color-base-darker);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--rx-color-secondary-light);
+    border-color: var(--rx-color-secondary-dark);
+  }
+
+  .btn-secondary:focus {
+    outline: 2px solid var(--rx-color-secondary-dark);
+    outline-offset: 2px;
+  }
+
+  .btn-success {
+    background-color: var(--rx-color-success);
+    border-color: var(--rx-color-success);
+    color: #ffffff;
+  }
+
+  .btn-success:hover:not(:disabled) {
+    background-color: var(--rx-color-success-dark);
+    border-color: var(--rx-color-success-dark);
+  }
+
+  .btn-success:focus {
+    outline: 2px solid var(--rx-color-success);
+    outline-offset: 2px;
+  }
+
+  .btn-caution {
+    background-color: var(--rx-color-caution);
+    border-color: var(--rx-color-caution);
+    color: #ffffff;
+  }
+
+  .btn-caution:hover:not(:disabled) {
+    background-color: var(--rx-color-caution-dark);
+    border-color: var(--rx-color-caution-dark);
+  }
+
+  .btn-caution:focus {
+    outline: 2px solid var(--rx-color-caution);
+    outline-offset: 2px;
+  }
+
+  .btn-danger {
+    background-color: var(--rx-color-danger);
+    border-color: var(--rx-color-danger);
+    color: #ffffff;
+  }
+
+  .btn-danger:hover:not(:disabled) {
+    background-color: var(--rx-color-danger-dark);
+    border-color: var(--rx-color-danger-dark);
+  }
+
+  .btn-danger:focus {
+    outline: 2px solid var(--rx-color-danger);
+    outline-offset: 2px;
+  }
+
+  .btn-info {
+    background-color: var(--rx-color-info);
+    border-color: var(--rx-color-info);
+    color: #ffffff;
+  }
+
+  .btn-info:hover:not(:disabled) {
+    background-color: var(--rx-color-info-dark);
+    border-color: var(--rx-color-info-dark);
+  }
+
+  .btn-info:focus {
+    outline: 2px solid var(--rx-color-info);
+    outline-offset: 2px;
+  }
+
+  /* Healthcare-specific button modes */
+  .btn-emergency {
+    outline: 2px solid var(--rx-color-danger);
+    outline-offset: 2px;
+  }
+
+  .btn-medical-device {
+    transition: all var(--rx-transition-slow);
+  }
+
+  .btn-medical-device:focus {
+    outline: var(--rx-medical-device-focus-ring-width) solid var(--rx-color-primary);
+    outline-offset: 3px;
+    /* Increased offset to prevent double border appearance */
+  }
+
+  .btn-critical-action {
+    outline: 3px solid var(--rx-color-caution-dark);
+    outline-offset: 2px;
+  }
+
+  .btn-critical-action:focus {
+    outline: 3px solid var(--rx-color-caution-dark);
+    outline-offset: 3px;
+  }
+
+  /* Emergency + Medical Device Mode + Critical Action combination */
+  .btn-emergency.btn-medical-device.btn-critical-action:focus {
+    outline: var(--rx-medical-device-focus-ring-width) solid var(--rx-color-caution-dark);
+    outline-offset: 3px;
+  }
+
+  /* ==================== BADGE COMPONENT CLASSES ==================== */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--rx-font-medium);
+    border-radius: var(--rx-radius-full);
+    transition: var(--rx-transition);
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+
+  /* Badge Size Variants */
+  .badge-xs {
+    padding: 0 var(--rx-spacing-2);
+    font-size: var(--rx-text-xs);
+    height: 1.25rem;
+    min-width: 1.25rem;
+  }
+
+  .badge-sm {
+    padding: 0 var(--rx-spacing-3);
+    font-size: var(--rx-text-sm);
+    height: 1.5rem;
+    min-width: 1.5rem;
+  }
+
+  .badge-md {
+    padding: 0 var(--rx-spacing-3);
+    font-size: var(--rx-text-sm);
+    height: 1.75rem;
+    min-width: 1.75rem;
+  }
+
+  .badge-lg {
+    padding: 0 var(--rx-spacing-4);
+    font-size: var(--rx-text-base);
+    height: 2rem;
+    min-width: 2rem;
+  }
+
+  /* Badge Variant Styles */
+  .badge-filled {
+    /* Default filled styling with subtle shadow */
+    box-shadow: var(--rx-shadow-sm);
+  }
+
+  .badge-filled.badge-primary {
+    background-color: var(--rx-color-primary);
+    color: #ffffff;
+  }
+
+  .badge-filled.badge-secondary {
+    background-color: var(--rx-color-secondary);
+    color: #ffffff;
+  }
+
+  .badge-filled.badge-success {
+    background-color: var(--rx-color-success);
+    color: #ffffff;
+  }
+
+  .badge-filled.badge-caution {
+    background-color: var(--rx-color-caution);
+    color: #ffffff;
+  }
+
+  .badge-filled.badge-danger {
+    background-color: var(--rx-color-danger);
+    color: #ffffff;
+  }
+
+  .badge-filled.badge-info {
+    background-color: var(--rx-color-info);
+    color: #ffffff;
+  }
+
+  .badge-outlined {
+    background-color: transparent;
+    border: 1px solid;
+  }
+
+  .badge-outlined.badge-primary {
+    border-color: var(--rx-color-primary);
+    color: var(--rx-color-primary);
+  }
+
+  .badge-outlined.badge-secondary {
+    border-color: var(--rx-color-secondary);
+    color: var(--rx-color-secondary);
+  }
+
+  .badge-outlined.badge-success {
+    border-color: var(--rx-color-success);
+    color: var(--rx-color-success);
+  }
+
+  .badge-outlined.badge-caution {
+    border-color: var(--rx-color-caution);
+    color: var(--rx-color-caution);
+  }
+
+  .badge-outlined.badge-danger {
+    border-color: var(--rx-color-danger);
+    color: var(--rx-color-danger);
+  }
+
+  .badge-outlined.badge-info {
+    border-color: var(--rx-color-info);
+    color: var(--rx-color-info);
+  }
+
+  .badge-ghost {
+    background-color: transparent;
+    border: none;
+  }
+
+  .badge-ghost.badge-primary {
+    background-color: var(--rx-color-primary-100);
+    color: var(--rx-color-primary-700);
+  }
+
+  .badge-ghost.badge-secondary {
+    background-color: var(--rx-color-secondary-100);
+    color: var(--rx-color-secondary-700);
+  }
+
+  .badge-ghost.badge-success {
+    background-color: var(--rx-color-success-100);
+    color: var(--rx-color-success-700);
+  }
+
+  .badge-ghost.badge-caution {
+    background-color: var(--rx-color-caution-100);
+    color: var(--rx-color-caution-700);
+  }
+
+  .badge-ghost.badge-danger {
+    background-color: var(--rx-color-danger-100);
+    color: var(--rx-color-danger-700);
+  }
+
+  .badge-ghost.badge-info {
+    background-color: var(--rx-color-info-100);
+    color: var(--rx-color-info-700);
+  }
+
+  /* Badge Special Variants */
+  .badge-dot {
+    padding: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: var(--rx-radius-full);
+  }
+
+  .badge-pulse {
+    animation: badge-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes badge-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* ==================== INPUT COMPONENT CLASSES ==================== */
+  .input {
+    width: 100%;
+    transition: var(--rx-transition);
+    background-color: transparent;
+    font-family: var(--rx-font-sans);
+    color: var(--rx-color-text);
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  .input::placeholder {
+    color: var(--rx-color-text-light);
+  }
+
+  /* Input Size Variants */
+  .input-xs {
+    padding: var(--size-xs-padding-y) var(--size-xs-padding-x);
+    font-size: var(--size-xs-text);
+    min-height: var(--size-xs-height);
+  }
+
+  .input-sm {
+    padding: var(--size-sm-padding-y) var(--size-sm-padding-x);
+    font-size: var(--size-sm-text);
+    min-height: var(--size-sm-height);
+  }
+
+  .input-md {
+    padding: var(--size-md-padding-y) var(--size-md-padding-x);
+    font-size: var(--size-md-text);
+    min-height: var(--size-md-height);
+  }
+
+  .input-lg {
+    padding: var(--size-lg-padding-y) var(--size-lg-padding-x);
+    font-size: var(--size-lg-text);
+    min-height: var(--size-lg-height);
+  }
+
+  .input-xl {
+    padding: var(--size-xl-padding-y) var(--size-xl-padding-x);
+    font-size: var(--size-xl-text);
+    min-height: var(--size-xl-height);
+  }
+
+  /* Input Variant Styles */
+  .input-outlined {
+    border: 1px solid var(--border-default);
+    border-radius: var(--rx-radius-md);
+  }
+
+  .input-outlined:focus {
+    border-color: var(--rx-color-primary);
+    box-shadow: 0 0 0 1px var(--rx-color-primary);
+  }
+
+  .input-outlined.input-error {
+    border-color: var(--rx-color-danger);
+  }
+
+  .input-outlined.input-error:focus {
+    border-color: var(--rx-color-danger);
+    box-shadow: 0 0 0 1px var(--rx-color-danger);
+  }
+
+  .input-filled {
+    background-color: var(--rx-color-base-50);
+    border: none;
+    border-bottom: 2px solid var(--border-default);
+    border-radius: var(--rx-radius-md) var(--rx-radius-md) 0 0;
+  }
+
+  .input-filled:focus {
+    background-color: var(--rx-color-base-100);
+    border-bottom-color: var(--rx-color-primary);
+  }
+
+  .input-filled.input-error {
+    border-bottom-color: var(--rx-color-danger);
+  }
+
+  .input-underlined {
+    border: none;
+    border-bottom: 1px solid var(--border-default);
+    border-radius: 0;
+  }
+
+  .input-underlined:focus {
+    border-bottom: 2px solid var(--rx-color-primary);
+  }
+
+  .input-underlined.input-error {
+    border-bottom-color: var(--rx-color-danger);
+  }
+
+  /* Input States */
+  .input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--rx-color-base-100);
+  }
+
+  .input-error {
+    border-color: var(--rx-color-danger);
+  }
+
+  /* Medical Device Input Enhancement */
+  .input-medical-device:focus {
+    outline: var(--rx-medical-device-focus-ring-width) solid var(--rx-color-primary);
+    outline-offset: var(--rx-medical-device-focus-ring-offset);
+  }
+
+  /* ==================== CARD COMPONENT CLASSES ==================== */
+  .card {
+    background-color: #ffffff;
+    border-radius: var(--rx-radius-lg);
+    border: 1px solid var(--border-light);
+    transition: var(--rx-transition);
+    overflow: hidden;
+  }
+
+  /* Card Size Variants */
+  .card-sm {
+    padding: var(--rx-spacing-3);
+  }
+
+  .card-md {
+    padding: var(--rx-spacing-4);
+  }
+
+  .card-lg {
+    padding: var(--rx-spacing-6);
+  }
+
+  .card-xl {
+    padding: var(--rx-spacing-8);
+  }
+
+  /* Card Variant Styles */
+  .card-outlined {
+    border: 1px solid var(--border-default);
+    box-shadow: none;
+  }
+
+  .card-filled {
+    background-color: var(--rx-color-base-50);
+    border: none;
+    box-shadow: none;
+  }
+
+  .card-elevated {
+    box-shadow: var(--rx-shadow-md);
+    border: none;
+  }
+
+  .card-floating {
+    box-shadow: var(--rx-shadow-lg);
+    border: none;
+  }
+
+  /* Interactive Card States */
+  .card-interactive {
     cursor: pointer;
   }
-  
+
+  .card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--rx-shadow-lg);
+  }
+
+  .card-interactive:active {
+    transform: translateY(0);
+    box-shadow: var(--rx-shadow-md);
+  }
+
+  /* Healthcare-Specific Card Variants */
+  .card-emergency {
+    border: 2px solid var(--rx-color-danger);
+    background-color: var(--rx-color-danger-50);
+    animation: card-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .card-critical {
+    border: 2px solid var(--rx-color-caution);
+    background-color: var(--rx-color-caution-50);
+  }
+
+  .card-medical-record {
+    border-left: 4px solid var(--rx-color-info);
+    background-color: var(--rx-color-info-50);
+  }
+
+  .card-patient-alert {
+    border: 2px dashed var(--rx-color-caution);
+    background-color: var(--rx-color-caution-50);
+  }
+
+  @keyframes card-pulse {
+    0%, 100% {
+      opacity: 1;
+      border-color: var(--rx-color-danger);
+    }
+    50% {
+      opacity: 0.9;
+      border-color: var(--rx-color-danger-dark);
+    }
+  }
+
+  /* ==================== SELECT/DROPDOWN COMPONENT CLASSES ==================== */
+  .select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--rx-transition);
+    font-family: var(--rx-font-sans);
+    color: var(--rx-color-text);
+    background-color: #ffffff;
+  }
+
+  .select-trigger:focus {
+    outline: none;
+  }
+
+  /* Select Size Variants */
+  .select-xs .select-trigger {
+    padding: var(--size-xs-padding-y) var(--size-xs-padding-x);
+    font-size: var(--size-xs-text);
+    min-height: var(--size-xs-height);
+  }
+
+  .select-sm .select-trigger {
+    padding: var(--size-sm-padding-y) var(--size-sm-padding-x);
+    font-size: var(--size-sm-text);
+    min-height: var(--size-sm-height);
+  }
+
+  .select-md .select-trigger {
+    padding: var(--size-md-padding-y) var(--size-md-padding-x);
+    font-size: var(--size-md-text);
+    min-height: var(--size-md-height);
+  }
+
+  .select-lg .select-trigger {
+    padding: var(--size-lg-padding-y) var(--size-lg-padding-x);
+    font-size: var(--size-lg-text);
+    min-height: var(--size-lg-height);
+  }
+
+  .select-xl .select-trigger {
+    padding: var(--size-xl-padding-y) var(--size-xl-padding-x);
+    font-size: var(--size-xl-text);
+    min-height: var(--size-xl-height);
+  }
+
+  /* Select Variant Styles */
+  .select-outlined .select-trigger {
+    border: 1px solid var(--border-default);
+    border-radius: var(--rx-radius-md);
+  }
+
+  .select-outlined .select-trigger:focus {
+    border-color: var(--rx-color-primary);
+    box-shadow: 0 0 0 1px var(--rx-color-primary);
+  }
+
+  .select-filled .select-trigger {
+    background-color: var(--rx-color-base-50);
+    border: none;
+    border-bottom: 2px solid var(--border-default);
+    border-radius: var(--rx-radius-md) var(--rx-radius-md) 0 0;
+  }
+
+  .select-filled .select-trigger:focus {
+    background-color: var(--rx-color-base-100);
+    border-bottom-color: var(--rx-color-primary);
+  }
+
+  /* Select Dropdown */
+  .select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #ffffff;
+    border: 1px solid var(--border-default);
+    border-radius: var(--rx-radius-md);
+    box-shadow: var(--rx-shadow-lg);
+    max-height: 16rem;
+    overflow-y: auto;
+    margin-top: 2px;
+  }
+
+  .select-option {
+    padding: var(--rx-spacing-3) var(--rx-spacing-4);
+    cursor: pointer;
+    transition: var(--rx-transition);
+    color: var(--rx-color-text);
+  }
+
+  .select-option:hover {
+    background-color: var(--rx-color-primary-50);
+    color: var(--rx-color-primary-dark);
+  }
+
+  .select-option:focus {
+    outline: none;
+    background-color: var(--rx-color-primary-100);
+    color: var(--rx-color-primary-dark);
+  }
+
+  .select-option[aria-selected="true"] {
+    background-color: var(--rx-color-primary);
+    color: #ffffff;
+  }
+
+  .select-option:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Medical Device Select Enhancement */
+  .select-medical-device .select-trigger:focus {
+    outline: var(--rx-medical-device-focus-ring-width) solid var(--rx-color-primary);
+    outline-offset: var(--rx-medical-device-focus-ring-offset);
+  }
+
+  /* ==================== CHECKBOX COMPONENT CLASSES ==================== */
+  .checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .checkbox-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--border-default);
+    border-radius: var(--rx-radius-sm);
+    transition: var(--rx-transition);
+    background-color: #ffffff;
+  }
+
+  .checkbox-input:checked + .checkbox-box {
+    background-color: var(--rx-color-primary);
+    border-color: var(--rx-color-primary);
+  }
+
+  .checkbox-input:indeterminate + .checkbox-box {
+    background-color: var(--rx-color-primary);
+    border-color: var(--rx-color-primary);
+  }
+
+  .checkbox-input:focus + .checkbox-box {
+    outline: 2px solid var(--rx-color-primary);
+    outline-offset: 2px;
+  }
+
+  .checkbox-input:disabled + .checkbox-box {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .checkbox-label {
+    margin-left: var(--rx-spacing-2);
+    font-size: var(--rx-text-sm);
+    color: var(--rx-color-text);
+  }
+
+  /* Checkbox Size Variants */
+  .checkbox-sm .checkbox-box {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .checkbox-sm .checkbox-label {
+    font-size: var(--rx-text-xs);
+  }
+
+  .checkbox-lg .checkbox-box {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .checkbox-lg .checkbox-label {
+    font-size: var(--rx-text-base);
+  }
+
+  /* ==================== RADIO COMPONENT CLASSES ==================== */
+  .radio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .radio-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--border-default);
+    border-radius: var(--rx-radius-full);
+    transition: var(--rx-transition);
+    background-color: #ffffff;
+  }
+
+  .radio-circle::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--rx-radius-full);
+    background-color: #ffffff;
+    opacity: 0;
+    transition: var(--rx-transition);
+  }
+
+  .radio-input:checked + .radio-circle {
+    background-color: var(--rx-color-primary);
+    border-color: var(--rx-color-primary);
+  }
+
+  .radio-input:checked + .radio-circle::after {
+    opacity: 1;
+  }
+
+  .radio-input:focus + .radio-circle {
+    outline: 2px solid var(--rx-color-primary);
+    outline-offset: 2px;
+  }
+
+  .radio-input:disabled + .radio-circle {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .radio-label {
+    margin-left: var(--rx-spacing-2);
+    font-size: var(--rx-text-sm);
+    color: var(--rx-color-text);
+  }
+
+  /* ==================== PROGRESS COMPONENT CLASSES ==================== */
+  .progress {
+    width: 100%;
+    background-color: var(--rx-color-base-200);
+    border-radius: var(--rx-radius-full);
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: var(--rx-color-primary);
+    border-radius: var(--rx-radius-full);
+    transition: width var(--rx-transition);
+  }
+
+  /* Progress Size Variants */
+  .progress-xs {
+    height: 0.25rem;
+  }
+
+  .progress-sm {
+    height: 0.5rem;
+  }
+
+  .progress-md {
+    height: 0.75rem;
+  }
+
+  .progress-lg {
+    height: 1rem;
+  }
+
+  .progress-xl {
+    height: 1.25rem;
+  }
+
+  /* Progress Intent Variants */
+  .progress-success .progress-bar {
+    background-color: var(--rx-color-success);
+  }
+
+  .progress-caution .progress-bar {
+    background-color: var(--rx-color-caution);
+  }
+
+  .progress-danger .progress-bar {
+    background-color: var(--rx-color-danger);
+  }
+
+  .progress-info .progress-bar {
+    background-color: var(--rx-color-info);
+  }
+
+  /* Indeterminate Progress */
+  .progress-indeterminate .progress-bar {
+    animation: progress-indeterminate 2s ease-in-out infinite;
+    background: linear-gradient(
+      90deg,
+      var(--rx-color-primary) 0%,
+      var(--rx-color-primary-light) 50%,
+      var(--rx-color-primary) 100%
+    );
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* ==================== MODAL/DIALOG COMPONENT CLASSES ==================== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: var(--rx-spacing-4);
+  }
+
+  .modal {
+    background-color: #ffffff;
+    border-radius: var(--rx-radius-lg);
+    box-shadow: var(--rx-shadow-xl);
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 32rem;
+    position: relative;
+  }
+
+  .modal-header {
+    padding: var(--rx-spacing-6);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .modal-title {
+    font-size: var(--rx-text-lg);
+    font-weight: var(--rx-font-semibold);
+    color: var(--rx-color-text-dark);
+    margin: 0;
+  }
+
+  .modal-close {
+    padding: var(--rx-spacing-1);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--rx-color-text-light);
+    transition: var(--rx-transition);
+    border-radius: var(--rx-radius-sm);
+  }
+
+  .modal-close:hover {
+    color: var(--rx-color-text-dark);
+    background-color: var(--rx-color-base-100);
+  }
+
+  .modal-body {
+    padding: var(--rx-spacing-6);
+  }
+
+  .modal-footer {
+    padding: var(--rx-spacing-6);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--rx-spacing-3);
+  }
+
+  /* Modal Size Variants */
+  .modal-sm {
+    max-width: 24rem;
+  }
+
+  .modal-md {
+    max-width: 32rem;
+  }
+
+  .modal-lg {
+    max-width: 48rem;
+  }
+
+  .modal-xl {
+    max-width: 64rem;
+  }
+
+  .modal-full {
+    max-width: none;
+    width: 95vw;
+    max-height: 95vh;
+  }
+
+  /* Healthcare Emergency Modal */
+  .modal-emergency {
+    border: 3px solid var(--rx-color-danger);
+    animation: modal-emergency-pulse 1s ease-in-out infinite alternate;
+  }
+
+  .modal-emergency .modal-header {
+    background-color: var(--rx-color-danger-50);
+    border-bottom-color: var(--rx-color-danger-200);
+  }
+
+  @keyframes modal-emergency-pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--rx-color-danger);
+    }
+    100% {
+      box-shadow: 0 0 0 10px transparent;
+    }
+  }
+
+  /* ==================== TOAST/NOTIFICATION COMPONENT CLASSES ==================== */
+  .toast-container {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .toast-container.toast-top-right {
+    top: var(--rx-spacing-4);
+    right: var(--rx-spacing-4);
+  }
+
+  .toast-container.toast-top-left {
+    top: var(--rx-spacing-4);
+    left: var(--rx-spacing-4);
+  }
+
+  .toast-container.toast-bottom-right {
+    bottom: var(--rx-spacing-4);
+    right: var(--rx-spacing-4);
+  }
+
+  .toast-container.toast-bottom-left {
+    bottom: var(--rx-spacing-4);
+    left: var(--rx-spacing-4);
+  }
+
+  .toast {
+    background-color: #ffffff;
+    border-radius: var(--rx-radius-lg);
+    box-shadow: var(--rx-shadow-lg);
+    padding: var(--rx-spacing-4);
+    margin-bottom: var(--rx-spacing-2);
+    pointer-events: auto;
+    max-width: 24rem;
+    border-left: 4px solid var(--rx-color-primary);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--rx-spacing-3);
+    transition: var(--rx-transition);
+  }
+
+  .toast-icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+  }
+
+  .toast-content {
+    flex: 1;
+  }
+
+  .toast-title {
+    font-weight: var(--rx-font-semibold);
+    font-size: var(--rx-text-sm);
+    color: var(--rx-color-text-dark);
+    margin: 0 0 var(--rx-spacing-1) 0;
+  }
+
+  .toast-message {
+    font-size: var(--rx-text-sm);
+    color: var(--rx-color-text);
+    margin: 0;
+  }
+
+  .toast-close {
+    padding: var(--rx-spacing-1);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--rx-color-text-light);
+    transition: var(--rx-transition);
+    border-radius: var(--rx-radius-sm);
+    flex-shrink: 0;
+  }
+
+  .toast-close:hover {
+    color: var(--rx-color-text-dark);
+    background-color: var(--rx-color-base-100);
+  }
+
+  /* Toast Intent Variants */
+  .toast-success {
+    border-left-color: var(--rx-color-success);
+    background-color: var(--rx-color-success-50);
+  }
+
+  .toast-caution {
+    border-left-color: var(--rx-color-caution);
+    background-color: var(--rx-color-caution-50);
+  }
+
+  .toast-danger {
+    border-left-color: var(--rx-color-danger);
+    background-color: var(--rx-color-danger-50);
+  }
+
+  .toast-info {
+    border-left-color: var(--rx-color-info);
+    background-color: var(--rx-color-info-50);
+  }
+
+  /* Healthcare Emergency Toast */
+  .toast-emergency {
+    border-left-color: var(--rx-color-danger);
+    background-color: var(--rx-color-danger-100);
+    animation: toast-emergency-pulse 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes toast-emergency-pulse {
+    0% {
+      box-shadow: var(--rx-shadow-lg);
+    }
+    100% {
+      box-shadow: var(--rx-shadow-xl), 0 0 0 4px var(--rx-color-danger-200);
+    }
+  }
+
+
+  /* ==================== UTILITY CLASSES ==================== */
+  @layer utilities {
+
+    /* Semantic color utilities */
+    .text-primary {
+      color: var(--rx-color-primary);
+    }
+
+    .text-secondary {
+      color: var(--rx-color-secondary-darker);
+    }
+
+    .text-success {
+      color: var(--rx-color-success);
+    }
+
+    .text-caution {
+      color: var(--rx-color-caution);
+    }
+
+    .text-danger {
+      color: var(--rx-color-danger);
+    }
+
+    .text-info {
+      color: var(--rx-color-info);
+    }
+
+    /* Text color hierarchy */
+    .text-base {
+      color: var(--rx-color-text);
+    }
+
+    .text-base-light {
+      color: var(--rx-color-text-light);
+    }
+
+    .text-base-lighter {
+      color: var(--rx-color-text-lighter);
+    }
+
+    .text-base-dark {
+      color: var(--rx-color-text-dark);
+    }
+
+    .text-base-darker {
+      color: var(--rx-color-text-darker);
+    }
+
+    /* Background utilities */
+    .bg-primary {
+      background-color: var(--rx-color-primary);
+    }
+
+    .bg-secondary {
+      background-color: var(--rx-color-secondary-lighter);
+    }
+
+    .bg-success {
+      background-color: var(--rx-color-success);
+    }
+
+    .bg-caution {
+      background-color: var(--rx-color-caution);
+    }
+
+    .bg-danger {
+      background-color: var(--rx-color-danger);
+    }
+
+    .bg-info {
+      background-color: var(--rx-color-info);
+    }
+
+    /* Border utilities */
+    .border-primary {
+      border-color: var(--rx-color-primary);
+    }
+
+    .border-secondary {
+      border-color: var(--rx-color-secondary);
+    }
+
+    .border-success {
+      border-color: var(--rx-color-success);
+    }
+
+    .border-caution {
+      border-color: var(--rx-color-caution);
+    }
+
+    .border-danger {
+      border-color: var(--rx-color-danger);
+    }
+
+    .border-info {
+      border-color: var(--rx-color-info);
+    }
+
+    /* Border color hierarchy */
+    .border-light {
+      border-color: var(--border-light);
+    }
+
+    .border-default {
+      border-color: var(--border-default);
+    }
+
+    .border-medium {
+      border-color: var(--border-medium);
+    }
+
+    .border-strong {
+      border-color: var(--border-strong);
+    }
+
+    /* Ring utilities for focus states */
+    .ring-primary {
+      --tw-ring-color: var(--rx-color-primary);
+    }
+
+    .ring-secondary {
+      --tw-ring-color: var(--rx-color-secondary);
+    }
+
+    .ring-success {
+      --tw-ring-color: var(--rx-color-success);
+    }
+
+    .ring-caution {
+      --tw-ring-color: var(--rx-color-caution);
+    }
+
+    .ring-danger {
+      --tw-ring-color: var(--rx-color-danger);
+    }
+
+    .ring-info {
+      --tw-ring-color: var(--rx-color-info);
+    }
+
+    /* Medical device focus enhancements */
+    .focus-medical-device:focus {
+      outline-width: var(--rx-medical-device-focus-ring-width);
+      outline-color: var(--rx-color-primary);
+      outline-offset: 3px;
+    }
+
+    /* Emergency mode styling */
+    .emergency-mode {
+      outline: 2px solid var(--rx-color-danger);
+      outline-offset: 2px;
+    }
+  }
+
+  /* ==================== BUTTON COMPONENT CLASSES ==================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--rx-font-sans);
+    font-weight: var(--rx-font-medium);
+    border: none;
+    border-radius: var(--rx-radius-md);
+    cursor: pointer;
+    transition: var(--rx-transition);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    white-space: nowrap;
+  }
+
   .btn:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
-  
+
   .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
   }
-  
-  /* Button Intent Styles */
-  .btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-white);
-  }
-  
-  .btn-primary:hover:not(:disabled) {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-  }
-  
-  .btn-primary:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-  }
-  
-  .btn-secondary {
-    background-color: var(--color-secondary-lighter);
-    border-color: var(--color-secondary);
-    color: var(--color-base-darker);
-  }
-  
-  .btn-secondary:hover:not(:disabled) {
-    background-color: var(--color-secondary-light);
-    border-color: var(--color-secondary-dark);
-  }
-  
-  .btn-secondary:focus {
-    outline: 2px solid var(--color-secondary-dark);
-    outline-offset: 2px;
-  }
-  
-  .btn-success {
-    background-color: var(--color-success);
-    border-color: var(--color-success);
-    color: var(--color-white);
-  }
-  
-  .btn-success:hover:not(:disabled) {
-    background-color: var(--color-success-dark);
-    border-color: var(--color-success-dark);
-  }
-  
-  .btn-success:focus {
-    outline: 2px solid var(--color-success);
-    outline-offset: 2px;
-  }
-  
-  .btn-caution {
-    background-color: var(--color-caution);
-    border-color: var(--color-caution);
-    color: var(--color-white);
-  }
-  
-  .btn-caution:hover:not(:disabled) {
-    background-color: var(--color-caution-dark);
-    border-color: var(--color-caution-dark);
-  }
-  
-  .btn-caution:focus {
-    outline: 2px solid var(--color-caution);
-    outline-offset: 2px;
-  }
-  
-  .btn-danger {
-    background-color: var(--color-danger);
-    border-color: var(--color-danger);
-    color: var(--color-white);
-  }
-  
-  .btn-danger:hover:not(:disabled) {
-    background-color: var(--color-danger-dark);
-    border-color: var(--color-danger-dark);
-  }
-  
-  .btn-danger:focus {
-    outline: 2px solid var(--color-danger);
-    outline-offset: 2px;
-  }
-  
-  .btn-info {
-    background-color: var(--color-info);
-    border-color: var(--color-info);
-    color: var(--color-white);
-  }
-  
-  .btn-info:hover:not(:disabled) {
-    background-color: var(--color-info-dark);
-    border-color: var(--color-info-dark);
-  }
-  
-  .btn-info:focus {
-    outline: 2px solid var(--color-info);
-    outline-offset: 2px;
-  }
-  
-  /* Button Size Styles */
+
+  /* Button Size Variants */
   .btn-xs {
     padding: var(--size-xs-padding-y) var(--size-xs-padding-x);
     font-size: var(--size-xs-text);
     min-height: var(--size-xs-height);
+    gap: var(--rx-spacing-1);
   }
-  
+
   .btn-sm {
     padding: var(--size-sm-padding-y) var(--size-sm-padding-x);
     font-size: var(--size-sm-text);
     min-height: var(--size-sm-height);
+    gap: var(--rx-spacing-1);
   }
-  
+
   .btn-md {
     padding: var(--size-md-padding-y) var(--size-md-padding-x);
     font-size: var(--size-md-text);
     min-height: var(--size-md-height);
+    gap: var(--rx-spacing-2);
   }
-  
+
   .btn-lg {
     padding: var(--size-lg-padding-y) var(--size-lg-padding-x);
     font-size: var(--size-lg-text);
     min-height: var(--size-lg-height);
+    gap: var(--rx-spacing-2);
   }
-  
+
   .btn-xl {
     padding: var(--size-xl-padding-y) var(--size-xl-padding-x);
     font-size: var(--size-xl-text);
     min-height: var(--size-xl-height);
+    gap: var(--rx-spacing-3);
   }
-  
-  /* Button State Modifiers */
-  .btn-full-width {
-    width: 100%;
-  }
-  
-  .btn-loading {
-    cursor: wait;
-  }
-  
-  .btn-loading .btn-content {
-    opacity: 0.75;
-  }
-  
-  /* Healthcare-specific Modifiers */
-  .btn-emergency {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    outline: 2px solid var(--healthcare-emergency-ring-color);
-    outline-offset: 2px;
-  }
-  
-  .btn-medical-device {
-    transition: all var(--transition-slow);
-  }
-  
-  .btn-medical-device:focus {
-    outline: var(--healthcare-medical-device-focus-ring-width) solid var(--color-primary);
-    outline-offset: 3px; /* Increased offset to prevent double border appearance */
-  }
-  
-  .btn-critical-action {
-    outline: 3px solid var(--healthcare-critical-ring-color);
-    outline-offset: 2px;
-  }
-  
-  .btn-critical-action:focus {
-    outline: 3px solid var(--healthcare-critical-ring-color);
-    outline-offset: 3px;
-  }
-  
-  /* Emergency + Medical Device Mode + Critical Action combination */
-  .btn-emergency.btn-medical-device.btn-critical-action:focus {
-    outline: var(--healthcare-medical-device-focus-ring-width) solid var(--healthcare-critical-ring-color);
-    outline-offset: 3px;
-  }
-}
 
-/* ==================== UTILITY CLASSES ==================== */
-@layer utilities {
-  /* Semantic color utilities */
-  .text-primary { color: var(--color-primary); }
-  .text-secondary { color: var(--color-secondary-darker); }
-  .text-success { color: var(--color-success); }
-  .text-caution { color: var(--color-caution); }
-  .text-danger { color: var(--color-danger); }
-  .text-info { color: var(--color-info); }
-  .text-base { color: var(--color-base); }
-  
-  .bg-primary { background-color: var(--color-primary); }
-  .bg-secondary { background-color: var(--color-secondary-lighter); }
-  .bg-success { background-color: var(--color-success); }
-  .bg-caution { background-color: var(--color-caution); }
-  .bg-danger { background-color: var(--color-danger); }
-  .bg-info { background-color: var(--color-info); }
-  .bg-base { background-color: var(--color-base-lighter); }
-  
-  .border-primary { border-color: var(--color-primary); }
-  .border-secondary { border-color: var(--color-secondary); }
-  .border-success { border-color: var(--color-success); }
-  .border-caution { border-color: var(--color-caution); }
-  .border-danger { border-color: var(--color-danger); }
-  .border-info { border-color: var(--color-info); }
-  .border-base { border-color: var(--color-base); }
-  
-  /* Border Color Utilities */
-  .border-subtle { border-color: var(--border-subtle); }
-  .border-light { border-color: var(--border-light); }
-  .border-default { border-color: var(--border-default); }
-  .border-medium { border-color: var(--border-medium); }
-  .border-strong { border-color: var(--border-strong); }
+  /* Button Variant Styles */
+  .btn-filled {
+    border: 1px solid transparent;
+  }
+
+  .btn-flat {
+    border: 1px solid transparent;
+  }
+
+  .btn-outlined {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+
+  .btn-text {
+    background-color: transparent;
+    border: none !important;
+    padding-left: var(--rx-spacing-2);
+    padding-right: var(--rx-spacing-2);
+  }
+
+  .btn-fab {
+    border-radius: 50%;
+    min-width: var(--size-lg-height);
+    width: var(--size-lg-height);
+    height: var(--size-lg-height);
+    padding: 0;
+    box-shadow: var(--rx-shadow-lg);
+  }
+
+  .btn-circular {
+    border-radius: 50%;
+    min-width: var(--size-md-height);
+    width: var(--size-md-height);
+    height: var(--size-md-height);
+    padding: 0;
+  }
+
+  /* Button Intent Colors */
+  .btn-primary.btn-filled {
+    background-color: var(--rx-color-primary);
+    color: white;
+  }
+
+  .btn-primary.btn-filled:hover {
+    background-color: var(--rx-color-primary-dark);
+  }
+
+  .btn-primary.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-primary-lighter);
+    outline: 2px solid var(--rx-color-primary);
+    outline-offset: 4px;
+  }
+
+  .btn-primary.btn-flat {
+    background-color: var(--rx-color-primary-lighter);
+    color: var(--rx-color-primary-dark);
+  }
+
+  .btn-primary.btn-flat:hover {
+    background-color: var(--rx-color-primary-light);
+  }
+
+  .btn-primary.btn-outlined {
+    color: var(--rx-color-primary);
+    border-color: var(--rx-color-primary);
+  }
+
+  .btn-primary.btn-outlined:hover {
+    background-color: var(--rx-color-primary-lighter);
+  }
+
+  .btn-primary.btn-text {
+    color: var(--rx-color-primary);
+  }
+
+  .btn-primary.btn-text:hover {
+    background-color: var(--rx-color-primary-light);
+    border: none;
+  }
+
+  /* Secondary Intent */
+  .btn-secondary.btn-filled {
+    background-color: var(--rx-color-secondary);
+    color: white;
+  }
+
+  .btn-secondary.btn-filled:hover {
+    background-color: var(--rx-color-secondary-dark);
+  }
+
+  .btn-secondary.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-secondary-lighter);
+    outline: 2px solid var(--rx-color-secondary);
+    outline-offset: 4px;
+  }
+
+  .btn-secondary.btn-flat {
+    background-color: var(--rx-color-secondary-lighter);
+    color: var(--rx-color-secondary-dark);
+  }
+
+  .btn-secondary.btn-flat:hover {
+    background-color: var(--rx-color-secondary-light);
+  }
+
+  .btn-secondary.btn-outlined {
+    color: var(--rx-color-secondary);
+    border-color: var(--rx-color-secondary);
+  }
+
+  .btn-secondary.btn-outlined:hover {
+    background-color: var(--rx-color-secondary-lighter);
+  }
+
+  .btn-secondary.btn-text {
+    color: var(--rx-color-secondary);
+  }
+
+  .btn-secondary.btn-text:hover {
+    background-color: var(--rx-color-secondary-light);
+    border: none;
+  }
+
+  /* Success Intent */
+  .btn-success.btn-filled {
+    background-color: var(--rx-color-success);
+    color: white;
+  }
+
+  .btn-success.btn-filled:hover {
+    background-color: var(--rx-color-success-dark);
+  }
+
+  .btn-success.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-success-lighter);
+    outline: 2px solid var(--rx-color-success);
+    outline-offset: 4px;
+  }
+
+  .btn-success.btn-flat {
+    background-color: var(--rx-color-success-lighter);
+    color: var(--rx-color-success-dark);
+  }
+
+  .btn-success.btn-flat:hover {
+    background-color: var(--rx-color-success-light);
+  }
+
+  .btn-success.btn-outlined {
+    color: var(--rx-color-success);
+    border-color: var(--rx-color-success);
+  }
+
+  .btn-success.btn-outlined:hover {
+    background-color: var(--rx-color-success-lighter);
+  }
+
+  .btn-success.btn-text {
+    color: var(--rx-color-success);
+  }
+
+  .btn-success.btn-text:hover {
+    background-color: var(--rx-color-success-light);
+    border: none;
+  }
+
+  /* Caution Intent */
+  .btn-caution.btn-filled {
+    background-color: var(--rx-color-caution);
+    color: white;
+  }
+
+  .btn-caution.btn-filled:hover {
+    background-color: var(--rx-color-caution-dark);
+  }
+
+  .btn-caution.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-caution-lighter);
+    outline: 2px solid var(--rx-color-caution);
+    outline-offset: 4px;
+  }
+
+  .btn-caution.btn-flat {
+    background-color: var(--rx-color-caution-lighter);
+    color: var(--rx-color-caution-dark);
+  }
+
+  .btn-caution.btn-flat:hover {
+    background-color: var(--rx-color-caution-light);
+  }
+
+  .btn-caution.btn-outlined {
+    color: var(--rx-color-caution);
+    border-color: var(--rx-color-caution);
+  }
+
+  .btn-caution.btn-outlined:hover {
+    background-color: var(--rx-color-caution-lighter);
+  }
+
+  .btn-caution.btn-text {
+    color: var(--rx-color-caution);
+  }
+
+  .btn-caution.btn-text:hover {
+    background-color: var(--rx-color-caution-light);
+    border: none;
+  }
+
+  /* Danger Intent */
+  .btn-danger.btn-filled {
+    background-color: var(--rx-color-danger);
+    color: white;
+  }
+
+  .btn-danger.btn-filled:hover {
+    background-color: var(--rx-color-danger-dark);
+  }
+
+  .btn-danger.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-danger-lighter);
+    outline: 2px solid var(--rx-color-danger);
+    outline-offset: 4px;
+  }
+
+  .btn-danger.btn-flat {
+    background-color: var(--rx-color-danger-lighter);
+    color: var(--rx-color-danger-dark);
+  }
+
+  .btn-danger.btn-flat:hover {
+    background-color: var(--rx-color-danger-light);
+  }
+
+  .btn-danger.btn-outlined {
+    color: var(--rx-color-danger);
+    border-color: var(--rx-color-danger);
+  }
+
+  .btn-danger.btn-outlined:hover {
+    background-color: var(--rx-color-danger-lighter);
+  }
+
+  .btn-danger.btn-text {
+    color: var(--rx-color-danger);
+  }
+
+  .btn-danger.btn-text:hover {
+    background-color: var(--rx-color-danger-light);
+    border: none;
+  }
+
+  /* Info Intent */
+  .btn-info.btn-filled {
+    background-color: var(--rx-color-info);
+    color: white;
+  }
+
+  .btn-info.btn-filled:hover {
+    background-color: var(--rx-color-info-dark);
+  }
+
+  .btn-info.btn-filled:focus {
+    box-shadow: 0 0 0 3px var(--rx-color-info-lighter);
+    outline: 2px solid var(--rx-color-info);
+    outline-offset: 4px;
+  }
+
+  .btn-info.btn-flat {
+    background-color: var(--rx-color-info-lighter);
+    color: var(--rx-color-info-dark);
+  }
+
+  .btn-info.btn-flat:hover {
+    background-color: var(--rx-color-info-light);
+  }
+
+  .btn-info.btn-outlined {
+    color: var(--rx-color-info);
+    border-color: var(--rx-color-info);
+  }
+
+  .btn-info.btn-outlined:hover {
+    background-color: var(--rx-color-info-lighter);
+  }
+
+  .btn-info.btn-text {
+    color: var(--rx-color-info);
+  }
+
+  .btn-info.btn-text:hover {
+    background-color: var(--rx-color-info-light);
+    border: none;
+  }
+
+  /* Healthcare-Specific Button Features */
+  .btn-emergency {
+    position: relative;
+  }
+
+  .btn-emergency::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid var(--rx-color-danger);
+    border-radius: inherit;
+    animation: emergency-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition: opacity 0.2s ease;
+  }
+
+  /* Hide pulsing ring when clicked/active - opposite behavior to critical action */
+  .btn-emergency:active::before {
+    display: none;
+  }
+
+  .btn-emergency:focus {
+    outline: 3px solid var(--rx-color-danger);
+    outline-offset: 6px;
+  }
+
+  /* Ring remains visible by default, including during focus (only hides on click) */
+  .btn-emergency:not(:active)::before {
+    display: block;
+  }
+
+  .btn-medical-device {
+    min-height: calc(var(--rx-medical-device-touch-target-size) - 4px);
+    font-weight: var(--rx-font-semibold);
+    border-width: 2px;
+  }
+
+  .btn-medical-device:focus {
+    outline-width: var(--rx-medical-device-focus-ring-width);
+    outline-offset: var(--rx-medical-device-focus-ring-offset);
+  }
+
+  .btn-critical-action {
+    box-shadow: 0 0 0 2px var(--rx-color-caution), 0 0 0 4px var(--rx-color-danger);
+    animation: critical-pulse 1.5s ease-in-out infinite;
+    transition: box-shadow 0.2s ease;
+  }
+
+  /* Reduce critical action rings opacity when focused to emphasize focus ring */
+  .btn-critical-action:focus {
+    outline: 3px solid var(--rx-color-primary);
+    outline-offset: 8px;
+    box-shadow: 0 0 0 2px rgba(var(--rx-color-caution-rgb), 0.4), 0 0 0 4px rgba(var(--rx-color-danger-rgb), 0.4);
+    animation: none; /* Pause pulsing during focus */
+  }
+
+  /* Restore full intensity when not focused */
+  .btn-critical-action:not(:focus) {
+    box-shadow: 0 0 0 2px var(--rx-color-caution), 0 0 0 4px var(--rx-color-danger);
+    animation: critical-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes emergency-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes critical-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 2px var(--rx-color-caution), 0 0 0 4px var(--rx-color-danger);
+    }
+    50% {
+      box-shadow: 0 0 0 4px var(--rx-color-caution), 0 0 0 8px var(--rx-color-danger);
+    }
+  }
 }

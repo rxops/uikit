@@ -57,7 +57,7 @@ export type ComponentSize = Size;
 export type Gap = Spacing;
 
 // Form-specific variants
-export type FormVariant = "default" | "filled" | "outlined";
+export type FormVariant = "default" | "filled" | "outlined" | "flat";
 
 // Validation states for form components
 export type ValidationState = "valid" | "invalid" | "pending";

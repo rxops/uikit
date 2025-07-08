@@ -54,5 +54,8 @@
     "undici": "*",
     "vite": "5.3.5",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "lucide-qwik": "^1.0.0"
   }
 }

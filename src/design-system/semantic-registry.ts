@@ -87,6 +87,8 @@ export function getSemanticColorClassSafe(
   const colorMap: Record<SemanticColorName, string> = {
     primary: 'blue',
     secondary: 'neutral',
+    base: 'neutral',
+    text: 'neutral',
     success: 'green',
     caution: 'amber',
     danger: 'red',
@@ -132,6 +134,8 @@ export function getSemanticButtonClasses(intent: SemanticColorName | 'secondary'
    const colorMap: Record<SemanticColorName, string> = {
     primary: 'blue',
     secondary: 'gray',
+    base: 'gray',
+    text: 'gray',
     success: 'green',
     caution: 'amber',
     danger: 'red',
