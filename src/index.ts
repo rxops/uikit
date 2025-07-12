@@ -39,17 +39,26 @@ export type { AlertProps, BadgeProps, IconProps, IconName } from "./components/f
 export { Input } from "./components/forms";
 export type { InputProps, InputType } from "./components/forms";
 
+// Export navigation components
+export { 
+  Header, 
+  NavLink, 
+  Navigation, 
+  ThemeToggle 
+} from "./components/navigation";
+export type { 
+  HeaderProps, 
+  NavLinkProps, 
+  NavigationProps, 
+  ThemeToggleProps 
+} from "./components/navigation";
+
 // Export structure components
 export { 
   Card, 
   CardHeader, 
   CardBody, 
-  CardFooter,
-  PatientCard,
-  VitalSignsCard,
-  MedicationCard,
-  EmergencyCard,
-  AppointmentCard
+  CardFooter
 } from "./components/structure";
 export type { 
   CardProps, 
